@@ -153,7 +153,7 @@ def main() -> None:
     print("Minimum/maximum sequences per letter:", int(counts.min()), int(counts.max()))
     print("\nTrain with:")
     print(
-        "python train_lstm_sign_model.py "
+        "python scripts/train_lstm_sign_model.py "
         f'--data-dir "{output_dir}" --output-dir "MODEL_OUTPUT_DIR"'
     )
 
