@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+
+# Datasets and participant data
+data/
+datasets/
+raw_data/
+*.npy
+*.npz
+*.zip
+
+# Trained models
+models/
+checkpoints/
+*.keras
+*.h5
+*.onnx
+
+# Detailed predictions
+validation_predictions.csv
+
+# Local outputs
+outputs/
+runs/
+logs/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# IDE and operating system
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
