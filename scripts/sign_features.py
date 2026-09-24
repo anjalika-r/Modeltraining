@@ -6,6 +6,59 @@ import numpy as np
 
 FEATURE_DIM = 227
 SCHEMA = 'pose33_left21_right21_xyz_shoulder_v1'
+ENGINEERED_SCHEMA = 'body_hands_shape_cross_xy_v2'
+MODEL_SCHEMAS = {'baseline': SCHEMA, 'shape-contact': ENGINEERED_SCHEMA}
+MODEL_DIMS = {SCHEMA: 227, ENGINEERED_SCHEMA: 497}
+# Wrist, fingertips, and four finger bases. Cross distances are left-major.
+CROSS_POINTS = [0, 4, 8, 12, 16, 20, 5, 9, 13, 17]
+
+
+def model_features(body_hands, schema=ENGINEERED_SCHEMA):
+    """Transform shoulder-normalized capture features, identically offline/live.
+
+    v2 layout: original 227; left/right 83 each (63 wrist-centred XYZ,
+    15 angles/pi, 5 extension ratios); 100 cross-hand XY distances;
+    2 right-minus-left wrist XY; 2 geometry-valid flags.
+    Invalid hand geometry is zeroed, including its retained coordinates.
+    Validity detects degenerate geometry, NOT plausible tracking mistakes.
+    """
+    x = np.asarray(body_hands, dtype=np.float32)
+    if x.ndim < 1 or x.shape[-1] != FEATURE_DIM or not np.isfinite(x).all():
+        raise ValueError('Expected finite shoulder-normalized 227-feature input')
+    if schema == SCHEMA:
+        return x
+    if schema != ENGINEERED_SCHEMA:
+        raise ValueError(f'Unsupported feature schema: {schema}')
+    base = x.copy()
+    hands, valid, blocks = [], [], []
+    chains = np.arange(1, 21).reshape(5, 4)
+    vertices = chains[:, :3].reshape(-1)
+    proximal = np.where(vertices % 4 == 1, 0, vertices - 1)
+    eps = 1e-6
+    for start, flag in [(99, 225), (162, 226)]:
+        h = x[..., start:start + 63].reshape(*x.shape[:-1], 21, 3)
+        palm = np.linalg.norm(h[..., 5, :] - h[..., 17, :], axis=-1)
+        a = h[..., proximal, :] - h[..., vertices, :]
+        b = h[..., vertices + 1, :] - h[..., vertices, :]
+        an, bn = np.linalg.norm(a, axis=-1), np.linalg.norm(b, axis=-1)
+        ok = (x[..., flag] > 0) & (palm > eps) & (an > eps).all(axis=-1) & (bn > eps).all(axis=-1)
+        local = (h - h[..., :1, :]) / np.maximum(palm, eps)[..., None, None]
+        cosine = np.sum(a * b, axis=-1) / np.maximum(an * bn, eps * eps)
+        angles = np.arccos(np.clip(cosine, -1, 1)) / np.pi
+        fingers = h[..., chains, :]
+        length = np.linalg.norm(np.diff(fingers, axis=-2), axis=-1).sum(axis=-1)
+        ratios = np.linalg.norm(fingers[..., -1, :] - fingers[..., 0, :], axis=-1) / np.maximum(length, eps)
+        block = np.concatenate([local.reshape(*x.shape[:-1], 63), angles, np.clip(ratios, 0, 1)], axis=-1)
+        blocks.append(np.where(ok[..., None], block, 0))
+        base[..., start:start + 63] = np.where(ok[..., None], base[..., start:start + 63], 0)
+        hands.append(h)
+        valid.append(ok)
+    both = valid[0] & valid[1]
+    delta = hands[0][..., CROSS_POINTS, :2][..., :, None, :] - hands[1][..., CROSS_POINTS, :2][..., None, :, :]
+    distances = np.linalg.norm(delta, axis=-1).reshape(*x.shape[:-1], 100)
+    wrist = hands[1][..., 0, :2] - hands[0][..., 0, :2]
+    return np.concatenate([base, *blocks, np.where(both[..., None], distances, 0),
+                           np.where(both[..., None], wrist, 0), np.stack(valid, axis=-1)], axis=-1).astype(np.float32)
 
 
 def normalize_body_hands(raw):

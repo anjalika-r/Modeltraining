@@ -20,6 +20,34 @@ Camera frames are processed locally.
 
 ## Train
 
+New training runs default to `--feature-set shape-contact`: 497 inputs per
+frame comprising the original body/hand context, 63 palm-normalized coordinates,
+15 joint angles divided by pi and 5 extension ratios per hand, 100 cross-hand
+XY distances, wrist XY displacement, and two geometry-valid flags. Cross-hand
+points are `[0, 4, 8, 12, 16, 20, 5, 9, 13, 17]` in left-major order, covering
+the wrist, fingertips and finger bases. Distances use shoulder-normalized XY;
+independent hand depths are not treated as shared 3D coordinates.
+
+The input dataset stays at 227 features; training and webcam inference share
+the same transformation. Missing or degenerate hands have their coordinates
+and derived blocks zeroed; cross-hand values require both hands to be valid.
+Original detection flags and separate geometry-valid flags distinguish missing
+information. These checks cannot identify plausible but incorrect tracking,
+so they do not fix the reported L/M/N/R tracking problems. No interpolation,
+motion deltas, soft-contact threshold, or handedness swapping is applied.
+
+Use `--feature-set baseline` to reproduce the original representation. Existing
+227-input checkpoints remain supported. Compare new runs on the same recording
+split; the historical scores below refer to the original baseline features,
+not the new representation. Improvement requires training and evaluation.
+
+Example feature experiment matching the existing three-signer split:
+
+```powershell
+python scripts/train_lstm_sign_model_tunable.py --data-dir data/letter_dataset --output-dir models/letters_shape_contact --feature-set shape-contact --participants angel rithika mathur --validation-fraction 0.15 --epochs 100
+python scripts/predict_webcam.py --model-dir models/letters_shape_contact
+```
+
 For the three-signer webcam experiment, train on 85% of Angel, Rithika and
 Mathur's recordings and validate on the remaining 15%:
 

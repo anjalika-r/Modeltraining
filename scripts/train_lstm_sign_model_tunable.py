@@ -7,7 +7,7 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.utils.class_weight import compute_class_weight
-from sign_features import FEATURE_DIM, SCHEMA, load_class_names
+from sign_features import FEATURE_DIM, SCHEMA, MODEL_SCHEMAS, model_features, load_class_names
 from dataset_split import split_selected_participants
 
 
@@ -16,6 +16,8 @@ def parse_args():
     p.add_argument('--data-dir', required=True, type=Path)
     p.add_argument('--output-dir', required=True, type=Path)
     p.add_argument('--input-file', default='sequences_body_hands.npy')
+    p.add_argument('--feature-set', choices=MODEL_SCHEMAS, default='shape-contact',
+                   help='Derived hand geometry and cross-hand XY features, or original baseline')
     p.add_argument('--val-participant', default='rithika')
     p.add_argument('--test-participant', help='Optional untouched participant for final evaluation')
     p.add_argument('--participants', nargs='+', help='Use only these participants, splitting their recordings into train/validation')
@@ -107,6 +109,8 @@ def main():
     pose = X[..., :99].reshape(*X.shape[:2], 33, 3)
     if not np.allclose((pose[..., 11, :] + pose[..., 12, :]) / 2, 0, atol=1e-4) or not np.allclose(np.linalg.norm(pose[..., 11, :2] - pose[..., 12, :2], axis=-1), 1, atol=1e-4):
         raise SystemExit('Input does not match shoulder-normalized feature contract')
+    schema = MODEL_SCHEMAS[args.feature_set]
+    X = model_features(X, schema)
     part = meta['participant'].astype(str)
     if args.participants:
         train_mask, val_mask = split_selected_participants(meta, args.participants, args.validation_fraction, args.seed)
@@ -136,7 +140,9 @@ def main():
             raise SystemExit('Invalid selected_timestamps in training metadata')
         durations.append((timestamps[-1] - timestamps[0]) / 1000)
     contract = {
-        'schema': SCHEMA, 'timesteps': int(X.shape[1]), 'feature_dim': FEATURE_DIM,
+        'schema': schema, 'capture_schema': SCHEMA,
+        'feature_set': args.feature_set,
+        'timesteps': int(X.shape[1]), 'feature_dim': int(X.shape[2]),
         'window_seconds': float(np.median(durations)),
         'sampling': 'uniform_frame_indices_floor',
         'landmarks': 'image_normalized_xyz; pose33,left_hand21,right_hand21,left_present,right_present',

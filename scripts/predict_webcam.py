@@ -8,7 +8,7 @@ import time
 
 import numpy as np
 
-from sign_features import SCHEMA, features_from_result, sample_window
+from sign_features import MODEL_DIMS, model_features, features_from_result, sample_window
 
 
 def parse_args():
@@ -43,7 +43,7 @@ def main():
     import tensorflow as tf
 
     config = json.loads((args.model_dir / 'inference_config.json').read_text())
-    if config['schema'] != SCHEMA:
+    if config['schema'] not in MODEL_DIMS or config['feature_dim'] != MODEL_DIMS[config['schema']]:
         raise SystemExit('Unsupported feature schema; retrain with the current trainer')
     if not args.landmarker.is_file():
         raise SystemExit('Missing MediaPipe model. Run: python scripts/download_landmarker.py')
@@ -103,6 +103,7 @@ def main():
                         status = f'Collecting sign: {min(elapsed / window_seconds, 1):.0%}'
                     elif now - last_prediction >= args.prediction_interval:
                         sequence = sample_window([f for _, f in frames], steps)
+                        sequence = model_features(sequence, config['schema'])
                         probs = model(sequence[None], training=False).numpy()[0]
                         index = int(probs.argmax())
                         confidence = float(probs[index])
