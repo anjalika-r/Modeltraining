@@ -280,7 +280,22 @@ capture consistency and per-letter errors, and select improvements using the
 validation split. Do not repeatedly tune against the test score. Recognizing a
 letter does not establish that the sign was performed correctly.
 
-## Verification
+## Website letter exercise
+
+`scripts/letter_predictor.py` exposes recorded-attempt inference for the sibling
+`SignSenseGDG` website. Its Letter island uses the existing reference JPGs,
+shuffles supported letters and sends timed, unmirrored JPEG camera frames to
+the website's local `serve.py`. It reuses the same normalization, frame sampling
+and `letters_three_signers` checkpoint as the webcam demo. Lost tracking produces
+an uncertain result; only accepted matching predictions update local progress.
+
+Run `python serve.py` from `C:\Users\mathu\SignSenseGDG` using the Python
+environment with this repository's requirements installed. See that repository's
+README for configuration and the localhost exercise URL. No model files need
+to be copied to the frontend. This remains practice feedback with the existing
+model limitations, not a validated technique assessment.
+
+## Verification commands
 
 ```powershell
 python -m unittest discover -s tests -v
