@@ -26,6 +26,23 @@ class SplitTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'Unknown'):
             split_selected_participants(pd.DataFrame({'participant': ['a']}), ['missing'], .15, 42)
 
+    def test_preserves_previous_recordings(self):
+        meta = pd.DataFrame([dict(participant=p, class_id=c, class_label=str(c), source_file=f'{p}/{c}/{i}')
+                             for p in ['old', 'new'] for c in range(2) for i in range(20)])
+        old = meta.loc[meta.participant == 'old'].copy()
+        old['split'] = ['validation' if i % 5 == 0 else 'train' for i in range(len(old))]
+        train, val = split_selected_participants(meta, ['old', 'new'], .15, 42, old)
+        self.assertTrue(val.loc[old.index].equals(old.split.eq('validation')))
+        self.assertTrue(train.loc[old.index].equals(old.split.eq('train')))
+        self.assertEqual(val.loc[meta.participant == 'new'].sum(), 6)
+        self.assertTrue((train | val).all())
+        self.assertFalse((train & val).any())
+        with self.assertRaisesRegex(ValueError, 'missing'):
+            split_selected_participants(meta.iloc[1:], ['old', 'new'], .15, 42, old)
+        old.loc[0, 'class_label'] = 'changed'
+        with self.assertRaisesRegex(ValueError, 'labels changed'):
+            split_selected_participants(meta, ['old', 'new'], .15, 42, old)
+
 
 if __name__ == '__main__':
     unittest.main()

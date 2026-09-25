@@ -9,6 +9,7 @@ from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.utils.class_weight import compute_class_weight
 from sign_features import FEATURE_DIM, SCHEMA, MODEL_SCHEMAS, model_features, load_class_names
 from dataset_split import split_selected_participants
+from training_weights import signer_letter_weights
 
 
 def parse_args():
@@ -21,6 +22,7 @@ def parse_args():
     p.add_argument('--val-participant', default='rithika')
     p.add_argument('--test-participant', help='Optional untouched participant for final evaluation')
     p.add_argument('--participants', nargs='+', help='Use only these participants, splitting their recordings into train/validation')
+    p.add_argument('--previous-split-manifest', type=Path, help='Preserve previous train/validation recordings; split only added recordings')
     p.add_argument('--validation-fraction', type=float, default=0.15)
     p.add_argument('--epochs', type=int, default=100)
     p.add_argument('--batch-size', type=int, default=32)
@@ -30,6 +32,8 @@ def parse_args():
     p.add_argument('--lr-factor', type=float, default=0.5)
     p.add_argument('--min-lr', type=float, default=1e-6)
     p.add_argument('--seed', type=int, default=42)
+    p.add_argument('--weighting', choices=['class', 'signer-letter'], default='class',
+                   help='Balance letters globally or give each signer and their letters equal training weight')
     p.add_argument('--frame-dense-units', type=int, default=128)
     p.add_argument('--lstm-units', type=int, default=64)
     p.add_argument('--dense-units', type=int, default=64)
@@ -40,6 +44,8 @@ def parse_args():
     args = p.parse_args()
     if args.participants and args.test_participant:
         p.error('--participants excludes everyone else; do not combine with --test-participant')
+    if args.previous_split_manifest and not args.participants:
+        p.error('--previous-split-manifest requires --participants')
     if not 0 < args.validation_fraction < 1:
         p.error('--validation-fraction must be between zero and one')
     if min(args.epochs, args.batch_size, args.frame_dense_units, args.lstm_units, args.dense_units) < 1:
@@ -113,7 +119,8 @@ def main():
     X = model_features(X, schema)
     part = meta['participant'].astype(str)
     if args.participants:
-        train_mask, val_mask = split_selected_participants(meta, args.participants, args.validation_fraction, args.seed)
+        previous = pd.read_csv(args.previous_split_manifest) if args.previous_split_manifest else None
+        train_mask, val_mask = split_selected_participants(meta, args.participants, args.validation_fraction, args.seed, previous)
         test_mask = pd.Series(False, index=meta.index)
         args.val_participant = None
     else:
@@ -123,6 +130,9 @@ def main():
         val_mask = part == args.val_participant
         test_mask = part == args.test_participant
         train_mask = ~(val_mask | test_mask)
+    if 'sequence_sha256' in meta:
+        if set(meta.loc[train_mask, 'sequence_sha256']) & set(meta.loc[val_mask | test_mask, 'sequence_sha256']):
+            raise SystemExit('Exact duplicate sequences cross training/evaluation splits')
     X_train, y_train = X[train_mask.to_numpy()], y[train_mask.to_numpy()]
     X_val, y_val = X[val_mask.to_numpy()], y[val_mask.to_numpy()]
     missing = sorted(set(range(n_classes)) - set(np.unique(y_train)))
@@ -130,8 +140,16 @@ def main():
     classes = np.unique(y_train)
     cw = compute_class_weight(class_weight='balanced', classes=classes, y=y_train)
     class_weights = {int(c): float(w) for c, w in zip(classes, cw)}
+    sample_weights = None
+    if args.weighting == 'signer-letter':
+        sample_weights = signer_letter_weights(meta.loc[train_mask])
+        class_weights = None
+    weight_audit = meta.loc[train_mask, ['participant', 'class_id']].copy()
+    weight_audit['weight'] = sample_weights if sample_weights is not None else [class_weights[int(c)] for c in y_train]
+    weight_audit.groupby(['participant', 'class_id']).agg(clips=('weight', 'size'), total_weight=('weight', 'sum')).to_csv(out/'training_weight_summary.csv')
 
     config = vars(args).copy(); config['data_dir'] = str(data_dir); config['output_dir'] = str(out); config['input_shape'] = list(X.shape)
+    config['previous_split_manifest'] = str(args.previous_split_manifest.resolve()) if args.previous_split_manifest else None
     with (out/'run_config.json').open('w') as f: json.dump(config, f, indent=2)
     durations = []
     for value in meta.loc[train_mask, 'selected_timestamps']:
@@ -182,6 +200,7 @@ def main():
         epochs=args.epochs,
         batch_size=args.batch_size,
         class_weight=class_weights,
+        sample_weight=sample_weights,
         callbacks=callbacks,
         shuffle=True,
         verbose=1)
