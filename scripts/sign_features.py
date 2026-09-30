@@ -13,6 +13,28 @@ MODEL_DIMS = {SCHEMA: 227, ENGINEERED_SCHEMA: 497}
 CROSS_POINTS = [0, 4, 8, 12, 16, 20, 5, 9, 13, 17]
 
 
+def mirror_body_hands(body_hands):
+    """Reflect shoulder-centred capture features and exchange anatomical sides.
+
+    Works on frames or whole sequences. Time order, Y/Z, and labels stay intact.
+    Apply before model_features so all derived geometry is recomputed.
+    """
+    x = np.asarray(body_hands, dtype=np.float32)
+    if x.ndim < 1 or x.shape[-1] != FEATURE_DIM or not np.isfinite(x).all():
+        raise ValueError('Expected finite shoulder-normalized 227-feature input')
+    result = x.copy()
+    pose_order = [0, 4, 5, 6, 1, 2, 3, 8, 7, 10, 9,
+                  12, 11, 14, 13, 16, 15, 18, 17, 20, 19, 22, 21,
+                  24, 23, 26, 25, 28, 27, 30, 29, 32, 31]
+    pose = x[..., :99].reshape(*x.shape[:-1], 33, 3)
+    result[..., :99] = pose[..., pose_order, :].reshape(*x.shape[:-1], 99)
+    result[..., 99:162] = x[..., 162:225]
+    result[..., 162:225] = x[..., 99:162]
+    result[..., 225:] = x[..., [226, 225]]
+    result[..., :225:3] *= -1
+    return result
+
+
 def model_features(body_hands, schema=ENGINEERED_SCHEMA):
     """Transform shoulder-normalized capture features, identically offline/live.
 
