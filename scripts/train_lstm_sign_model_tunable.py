@@ -7,7 +7,7 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.utils.class_weight import compute_class_weight
-from sign_features import FEATURE_DIM, SCHEMA, MODEL_SCHEMAS, model_features, load_class_names
+from sign_features import FEATURE_DIM, SCHEMA, MODEL_SCHEMAS, model_features, load_class_names, mirror_body_hands
 from dataset_split import split_selected_participants
 from training_weights import signer_letter_weights
 
@@ -17,6 +17,8 @@ def parse_args():
     p.add_argument('--data-dir', required=True, type=Path)
     p.add_argument('--output-dir', required=True, type=Path)
     p.add_argument('--input-file', default='sequences_body_hands.npy')
+    p.add_argument('--mirror-augmentation', action=argparse.BooleanOptionalAction, default=True,
+                   help='Add a mirrored copy of every training sequence (default: enabled)')
     p.add_argument('--feature-set', choices=MODEL_SCHEMAS, default='shape-contact',
                    help='Derived hand geometry and cross-hand XY features, or original baseline')
     p.add_argument('--val-participant', default='rithika')
@@ -116,7 +118,6 @@ def main():
     if not np.allclose((pose[..., 11, :] + pose[..., 12, :]) / 2, 0, atol=1e-4) or not np.allclose(np.linalg.norm(pose[..., 11, :2] - pose[..., 12, :2], axis=-1), 1, atol=1e-4):
         raise SystemExit('Input does not match shoulder-normalized feature contract')
     schema = MODEL_SCHEMAS[args.feature_set]
-    X = model_features(X, schema)
     part = meta['participant'].astype(str)
     if args.participants:
         previous = pd.read_csv(args.previous_split_manifest) if args.previous_split_manifest else None
@@ -147,6 +148,17 @@ def main():
     weight_audit = meta.loc[train_mask, ['participant', 'class_id']].copy()
     weight_audit['weight'] = sample_weights if sample_weights is not None else [class_weights[int(c)] for c in y_train]
     weight_audit.groupby(['participant', 'class_id']).agg(clips=('weight', 'size'), total_weight=('weight', 'sum')).to_csv(out/'training_weight_summary.csv')
+
+    # Split and calculate weights on source recordings before augmentation.
+    original_training_sequences = len(X_train)
+    if args.mirror_augmentation:
+        X_train = np.concatenate([X_train, mirror_body_hands(X_train)])
+        y_train = np.concatenate([y_train, y_train])
+        if sample_weights is not None:
+            sample_weights = np.concatenate([sample_weights, sample_weights])
+    X_train = model_features(X_train, schema)
+    X = model_features(X, schema)
+    X_val = X[val_mask.to_numpy()]
 
     config = vars(args).copy(); config['data_dir'] = str(data_dir); config['output_dir'] = str(out); config['input_shape'] = list(X.shape)
     config['previous_split_manifest'] = str(args.previous_split_manifest.resolve()) if args.previous_split_manifest else None
@@ -232,6 +244,8 @@ def main():
     summary = {
         'input_shape': list(X.shape), 'num_classes': n_classes,
         'training_sequences': int(len(X_train)), 'validation_sequences': int(len(X_val)),
+        'original_training_sequences': original_training_sequences,
+        'mirrored_training_sequences': original_training_sequences if args.mirror_augmentation else 0,
         'validation_participant': args.val_participant,
         'split_strategy': 'within_participant_recordings' if args.participants else 'held_out_participants',
         'validation_participants': sorted(meta.loc[val_mask, 'participant'].unique().tolist()),

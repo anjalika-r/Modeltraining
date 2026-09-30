@@ -1,0 +1,414 @@
+{
+  "reference": {
+    "original": {
+      "clips": 220,
+      "accuracy": 0.8090909090909091,
+      "per_letter": {
+        "A": {
+          "clips": 13,
+          "accuracy": 0.8461538461538461
+        },
+        "B": {
+          "clips": 9,
+          "accuracy": 1.0
+        },
+        "C": {
+          "clips": 5,
+          "accuracy": 0.8
+        },
+        "D": {
+          "clips": 9,
+          "accuracy": 0.8888888888888888
+        },
+        "E": {
+          "clips": 11,
+          "accuracy": 0.8181818181818182
+        },
+        "F": {
+          "clips": 8,
+          "accuracy": 1.0
+        },
+        "G": {
+          "clips": 5,
+          "accuracy": 0.8
+        },
+        "I": {
+          "clips": 9,
+          "accuracy": 0.7777777777777778
+        },
+        "K": {
+          "clips": 11,
+          "accuracy": 0.9090909090909091
+        },
+        "L": {
+          "clips": 13,
+          "accuracy": 0.6153846153846154
+        },
+        "M": {
+          "clips": 11,
+          "accuracy": 0.9090909090909091
+        },
+        "N": {
+          "clips": 12,
+          "accuracy": 0.25
+        },
+        "O": {
+          "clips": 14,
+          "accuracy": 0.7857142857142857
+        },
+        "P": {
+          "clips": 10,
+          "accuracy": 0.9
+        },
+        "Q": {
+          "clips": 5,
+          "accuracy": 1.0
+        },
+        "R": {
+          "clips": 14,
+          "accuracy": 0.7142857142857143
+        },
+        "S": {
+          "clips": 6,
+          "accuracy": 0.8333333333333334
+        },
+        "T": {
+          "clips": 5,
+          "accuracy": 1.0
+        },
+        "U": {
+          "clips": 15,
+          "accuracy": 0.8666666666666667
+        },
+        "V": {
+          "clips": 12,
+          "accuracy": 0.75
+        },
+        "W": {
+          "clips": 5,
+          "accuracy": 0.8
+        },
+        "X": {
+          "clips": 4,
+          "accuracy": 1.0
+        },
+        "Y": {
+          "clips": 9,
+          "accuracy": 0.7777777777777778
+        },
+        "Z": {
+          "clips": 5,
+          "accuracy": 1.0
+        }
+      }
+    },
+    "synthetic_mirrored": {
+      "clips": 220,
+      "accuracy": 0.4318181818181818,
+      "per_letter": {
+        "A": {
+          "clips": 13,
+          "accuracy": 0.46153846153846156
+        },
+        "B": {
+          "clips": 9,
+          "accuracy": 0.7777777777777778
+        },
+        "C": {
+          "clips": 5,
+          "accuracy": 0.4
+        },
+        "D": {
+          "clips": 9,
+          "accuracy": 0.4444444444444444
+        },
+        "E": {
+          "clips": 11,
+          "accuracy": 0.7272727272727273
+        },
+        "F": {
+          "clips": 8,
+          "accuracy": 0.875
+        },
+        "G": {
+          "clips": 5,
+          "accuracy": 0.8
+        },
+        "I": {
+          "clips": 9,
+          "accuracy": 0.3333333333333333
+        },
+        "K": {
+          "clips": 11,
+          "accuracy": 0.36363636363636365
+        },
+        "L": {
+          "clips": 13,
+          "accuracy": 0.07692307692307693
+        },
+        "M": {
+          "clips": 11,
+          "accuracy": 0.0
+        },
+        "N": {
+          "clips": 12,
+          "accuracy": 0.0
+        },
+        "O": {
+          "clips": 14,
+          "accuracy": 0.42857142857142855
+        },
+        "P": {
+          "clips": 10,
+          "accuracy": 0.5
+        },
+        "Q": {
+          "clips": 5,
+          "accuracy": 0.6
+        },
+        "R": {
+          "clips": 14,
+          "accuracy": 0.21428571428571427
+        },
+        "S": {
+          "clips": 6,
+          "accuracy": 0.3333333333333333
+        },
+        "T": {
+          "clips": 5,
+          "accuracy": 0.6
+        },
+        "U": {
+          "clips": 15,
+          "accuracy": 0.4666666666666667
+        },
+        "V": {
+          "clips": 12,
+          "accuracy": 0.5
+        },
+        "W": {
+          "clips": 5,
+          "accuracy": 0.4
+        },
+        "X": {
+          "clips": 4,
+          "accuracy": 0.75
+        },
+        "Y": {
+          "clips": 9,
+          "accuracy": 0.4444444444444444
+        },
+        "Z": {
+          "clips": 5,
+          "accuracy": 1.0
+        }
+      }
+    }
+  },
+  "candidate": {
+    "original": {
+      "clips": 220,
+      "accuracy": 0.7818181818181819,
+      "per_letter": {
+        "A": {
+          "clips": 13,
+          "accuracy": 0.7692307692307693
+        },
+        "B": {
+          "clips": 9,
+          "accuracy": 1.0
+        },
+        "C": {
+          "clips": 5,
+          "accuracy": 1.0
+        },
+        "D": {
+          "clips": 9,
+          "accuracy": 0.8888888888888888
+        },
+        "E": {
+          "clips": 11,
+          "accuracy": 0.8181818181818182
+        },
+        "F": {
+          "clips": 8,
+          "accuracy": 1.0
+        },
+        "G": {
+          "clips": 5,
+          "accuracy": 1.0
+        },
+        "I": {
+          "clips": 9,
+          "accuracy": 0.6666666666666666
+        },
+        "K": {
+          "clips": 11,
+          "accuracy": 0.9090909090909091
+        },
+        "L": {
+          "clips": 13,
+          "accuracy": 0.15384615384615385
+        },
+        "M": {
+          "clips": 11,
+          "accuracy": 0.6363636363636364
+        },
+        "N": {
+          "clips": 12,
+          "accuracy": 0.5
+        },
+        "O": {
+          "clips": 14,
+          "accuracy": 0.7142857142857143
+        },
+        "P": {
+          "clips": 10,
+          "accuracy": 0.9
+        },
+        "Q": {
+          "clips": 5,
+          "accuracy": 1.0
+        },
+        "R": {
+          "clips": 14,
+          "accuracy": 0.6428571428571429
+        },
+        "S": {
+          "clips": 6,
+          "accuracy": 1.0
+        },
+        "T": {
+          "clips": 5,
+          "accuracy": 1.0
+        },
+        "U": {
+          "clips": 15,
+          "accuracy": 0.8666666666666667
+        },
+        "V": {
+          "clips": 12,
+          "accuracy": 0.75
+        },
+        "W": {
+          "clips": 5,
+          "accuracy": 1.0
+        },
+        "X": {
+          "clips": 4,
+          "accuracy": 1.0
+        },
+        "Y": {
+          "clips": 9,
+          "accuracy": 0.7777777777777778
+        },
+        "Z": {
+          "clips": 5,
+          "accuracy": 1.0
+        }
+      }
+    },
+    "synthetic_mirrored": {
+      "clips": 220,
+      "accuracy": 0.7863636363636364,
+      "per_letter": {
+        "A": {
+          "clips": 13,
+          "accuracy": 0.6923076923076923
+        },
+        "B": {
+          "clips": 9,
+          "accuracy": 1.0
+        },
+        "C": {
+          "clips": 5,
+          "accuracy": 1.0
+        },
+        "D": {
+          "clips": 9,
+          "accuracy": 0.8888888888888888
+        },
+        "E": {
+          "clips": 11,
+          "accuracy": 0.8181818181818182
+        },
+        "F": {
+          "clips": 8,
+          "accuracy": 1.0
+        },
+        "G": {
+          "clips": 5,
+          "accuracy": 1.0
+        },
+        "I": {
+          "clips": 9,
+          "accuracy": 0.6666666666666666
+        },
+        "K": {
+          "clips": 11,
+          "accuracy": 1.0
+        },
+        "L": {
+          "clips": 13,
+          "accuracy": 0.23076923076923078
+        },
+        "M": {
+          "clips": 11,
+          "accuracy": 0.6363636363636364
+        },
+        "N": {
+          "clips": 12,
+          "accuracy": 0.16666666666666666
+        },
+        "O": {
+          "clips": 14,
+          "accuracy": 0.7142857142857143
+        },
+        "P": {
+          "clips": 10,
+          "accuracy": 1.0
+        },
+        "Q": {
+          "clips": 5,
+          "accuracy": 1.0
+        },
+        "R": {
+          "clips": 14,
+          "accuracy": 0.7142857142857143
+        },
+        "S": {
+          "clips": 6,
+          "accuracy": 1.0
+        },
+        "T": {
+          "clips": 5,
+          "accuracy": 1.0
+        },
+        "U": {
+          "clips": 15,
+          "accuracy": 0.9333333333333333
+        },
+        "V": {
+          "clips": 12,
+          "accuracy": 0.8333333333333334
+        },
+        "W": {
+          "clips": 5,
+          "accuracy": 1.0
+        },
+        "X": {
+          "clips": 4,
+          "accuracy": 1.0
+        },
+        "Y": {
+          "clips": 9,
+          "accuracy": 0.7777777777777778
+        },
+        "Z": {
+          "clips": 5,
+          "accuracy": 1.0
+        }
+      }
+    }
+  }
+}

@@ -34,7 +34,38 @@ and derived blocks zeroed; cross-hand values require both hands to be valid.
 Original detection flags and separate geometry-valid flags distinguish missing
 information. These checks cannot identify plausible but incorrect tracking,
 so they do not fix the reported L/M/N/R tracking problems. No interpolation,
-motion deltas, soft-contact threshold, or handedness swapping is applied.
+motion deltas or soft-contact threshold is applied. Training augmentation swaps
+handedness as described below; live feature extraction retains anatomical sides.
+
+Training now includes an original and horizontally mirrored copy of every
+training sequence, for all sign labels. Mirroring reflects shoulder-centred X,
+swaps anatomical left/right pose landmarks, hand blocks and presence flags,
+and recomputes derived features. The entire sequence is mirrored consistently,
+including both hands; labels and timing are preserved. Source recordings are
+split first, and validation/test inputs are not augmented. Signer-letter weights
+are duplicated with their examples; `training_weight_summary.csv` describes
+original recordings before augmentation. Run configs record `mirror_augmentation`,
+and evaluation summaries include original and mirrored training counts.
+
+Use `--no-mirror-augmentation` for an unaugmented comparison. Existing saved
+models are unchanged and must be retrained to benefit. To train a separate
+mirrored model using the existing three-signer split and baseline features:
+
+```powershell
+python scripts/train_lstm_sign_model_tunable.py --data-dir data/letter_dataset --output-dir models/letters_three_signers_mirrored --feature-set baseline --participants angel rithika mathur --previous-split-manifest models/letters_three_signers/split_manifest.csv --epochs 100
+```
+
+Mirroring assumes each label is preserved when the whole performance switches
+sides. Evaluate real recordings from both dominant hands before replacing the
+deployed model; synthetic mirroring cannot correct tracking errors.
+
+Compare the old and new models on original validation clips and synthetic
+reflections of the same clips (saved as `mirror_robustness.json`):
+
+```powershell
+python scripts/evaluate_mirror_robustness.py --reference models/letters_three_signers --candidate models/letters_three_signers_mirrored
+python scripts/predict_webcam.py --model-dir models/letters_three_signers_mirrored
+```
 
 Use `--feature-set baseline` to reproduce the original representation. Existing
 227-input checkpoints remain supported. Compare new runs on the same recording
