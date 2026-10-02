@@ -2,6 +2,7 @@
 import base64
 import binascii
 import json
+import hashlib
 from pathlib import Path
 
 import numpy as np
@@ -37,11 +38,12 @@ def validate_frames(frames, config):
     return times
 
 
-def verdict(probabilities, names, expected, threshold=0.8):
+def verdict(probabilities, names, expected, threshold=0.85):
     index = int(np.argmax(probabilities))
     detected, score = names[index], float(probabilities[index])
-    if score < threshold:
+    if not np.isfinite(score) or score < threshold:
         status, feedback = 'uncertain', 'We could not recognise that clearly. Try again.'
+        detected = None
     elif detected == expected:
         status, feedback = 'match', f'Correct! We recognised {expected}.'
     else:
@@ -51,7 +53,7 @@ def verdict(probabilities, names, expected, threshold=0.8):
 
 
 class LetterPredictor:
-    def __init__(self, model_dir, landmarker, threshold=0.8):
+    def __init__(self, model_dir, landmarker, threshold=0.85):
         import cv2
         import mediapipe as mp
         import tensorflow as tf
@@ -60,7 +62,10 @@ class LetterPredictor:
         cfg = self.config
         if MODEL_DIMS.get(cfg['schema']) != cfg['feature_dim']:
             raise ValueError('Unsupported feature schema.')
-        self.model = tf.keras.models.load_model(Path(model_dir) / 'best_lstm_model.keras', compile=False)
+        model_path = (Path(model_dir) / 'best_lstm_model.keras').resolve()
+        self.model = tf.keras.models.load_model(model_path, compile=False)
+        self.model_info = dict(checkpoint=str(model_path),
+                               checkpoint_sha256=hashlib.sha256(model_path.read_bytes()).hexdigest())
         if tuple(self.model.input_shape[1:]) != (cfg['timesteps'], cfg['feature_dim']) or self.model.output_shape[-1] != len(cfg['class_names']):
             raise ValueError('Model and inference configuration disagree.')
         self.landmarker = str(landmarker)
@@ -69,6 +74,8 @@ class LetterPredictor:
         if not 0 <= threshold <= 1:
             raise ValueError('Threshold must be between zero and one.')
         self.threshold = threshold
+        self.model_info.update(threshold=threshold, mirror_input=cfg.get('mirror_input', False))
+        print(f'Letter recognition loaded: {json.dumps(self.model_info)}', flush=True)
 
     def predict(self, frames, expected):
         cfg, cv2, mp = self.config, self.cv2, self.mp

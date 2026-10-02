@@ -317,8 +317,26 @@ letter does not establish that the sign was performed correctly.
 `SignSenseGDG` website. Its Letter island uses the existing reference JPGs,
 shuffles supported letters and sends timed, unmirrored JPEG camera frames to
 the website's local `serve.py`. It reuses the same normalization, frame sampling
-and `letters_three_signers` checkpoint as the webcam demo. Lost tracking produces
+and `letters_three_signers_mirrored` checkpoint as the webcam demo. Lost tracking produces
 an uncertain result; only accepted matching predictions update local progress.
+Recorded attempts require a model score of at least 0.85 by default. Uncertain
+results return no detected letter, so the website does not display a best guess.
+The website server also defaults to 0.85; `SIGNSENSE_LETTER_THRESHOLD` can
+override it. This score is uncalibrated and does not guarantee correctness.
+After changing the website server or predictor, stop older server instances
+and restart it: editing files does not reload an already loaded model.
+`GET /api/letters` reports the configured model version. An actual
+`POST /api/letter-attempt` response also includes `model_info`, containing
+the loaded checkpoint path, SHA-256 fingerprint, threshold and input mirroring.
+For a comparison at the website's stricter threshold, run:
+
+```powershell
+python scripts/predict_webcam.py --model-dir models/letters_three_signers_mirrored --threshold 0.85
+```
+
+The webcam uses continuous tracking and repeated rolling-window predictions;
+the website evaluates one JPEG recording with a fresh tracker. Matching the
+checkpoint and threshold does not make the camera capture paths identical.
 
 Run `python serve.py` from `C:\Users\mathu\SignSenseGDG` using the Python
 environment with this repository's requirements installed. See that repository's

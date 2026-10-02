@@ -30,9 +30,19 @@ class LetterAttemptTests(unittest.TestCase):
                 validate_frames(frames, self.config)
 
     def test_outcomes(self):
-        self.assertEqual(verdict([.9, .1], ['A', 'B'], 'A')['status'], 'match')
-        self.assertEqual(verdict([.1, .9], ['A', 'B'], 'A')['status'], 'different_sign')
+        self.assertEqual(verdict([.995, .005], ['A', 'B'], 'A')['status'], 'match')
+        self.assertEqual(verdict([.005, .995], ['A', 'B'], 'A')['status'], 'different_sign')
         self.assertEqual(verdict([.6, .4], ['A', 'B'], 'A')['status'], 'uncertain')
+
+    def test_uncertain_results_do_not_identify_a_letter(self):
+        for probabilities in ([.6, .4], [.849, .151], [float('nan'), .1]):
+            result = verdict(probabilities, ['A', 'B'], 'A')
+            self.assertEqual(result['status'], 'uncertain')
+            self.assertIsNone(result['detected_letter'])
+
+    def test_threshold_boundary_and_explicit_override(self):
+        self.assertEqual(verdict([.85, .15], ['A', 'B'], 'A')['status'], 'match')
+        self.assertEqual(verdict([.9, .1], ['A', 'B'], 'A', threshold=.8)['status'], 'match')
 
 
 if __name__ == '__main__':
