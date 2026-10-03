@@ -1,0 +1,1410 @@
+{
+  "checks": {
+    "identical_recordings_and_splits": true,
+    "same_hyperparameters_and_mirroring": true,
+    "no_original_or_mirrored_training_overlap": true
+  },
+  "results": {
+    "baseline": {
+      "validation_original": {
+        "all": {
+          "clips": 244,
+          "accuracy": 0.8278688524590164,
+          "accepted": 142,
+          "accepted_accuracy": 0.9647887323943662
+        },
+        "by_letter": {
+          "A": {
+            "clips": 18,
+            "accuracy": 0.9444444444444444,
+            "accepted": 16,
+            "accepted_accuracy": 0.9375
+          },
+          "B": {
+            "clips": 13,
+            "accuracy": 1.0,
+            "accepted": 13,
+            "accepted_accuracy": 1.0
+          },
+          "C": {
+            "clips": 5,
+            "accuracy": 1.0,
+            "accepted": 4,
+            "accepted_accuracy": 1.0
+          },
+          "D": {
+            "clips": 12,
+            "accuracy": 0.9166666666666666,
+            "accepted": 10,
+            "accepted_accuracy": 0.9
+          },
+          "E": {
+            "clips": 13,
+            "accuracy": 0.9230769230769231,
+            "accepted": 11,
+            "accepted_accuracy": 0.9090909090909091
+          },
+          "F": {
+            "clips": 12,
+            "accuracy": 0.9166666666666666,
+            "accepted": 11,
+            "accepted_accuracy": 0.9090909090909091
+          },
+          "G": {
+            "clips": 5,
+            "accuracy": 1.0,
+            "accepted": 5,
+            "accepted_accuracy": 1.0
+          },
+          "I": {
+            "clips": 9,
+            "accuracy": 0.5555555555555556,
+            "accepted": 2,
+            "accepted_accuracy": 1.0
+          },
+          "K": {
+            "clips": 13,
+            "accuracy": 0.7692307692307693,
+            "accepted": 10,
+            "accepted_accuracy": 1.0
+          },
+          "L": {
+            "clips": 13,
+            "accuracy": 0.5384615384615384,
+            "accepted": 0,
+            "accepted_accuracy": null
+          },
+          "M": {
+            "clips": 13,
+            "accuracy": 0.8461538461538461,
+            "accepted": 0,
+            "accepted_accuracy": null
+          },
+          "N": {
+            "clips": 16,
+            "accuracy": 0.3125,
+            "accepted": 0,
+            "accepted_accuracy": null
+          },
+          "O": {
+            "clips": 19,
+            "accuracy": 0.631578947368421,
+            "accepted": 2,
+            "accepted_accuracy": 1.0
+          },
+          "P": {
+            "clips": 10,
+            "accuracy": 0.9,
+            "accepted": 10,
+            "accepted_accuracy": 0.9
+          },
+          "Q": {
+            "clips": 7,
+            "accuracy": 1.0,
+            "accepted": 7,
+            "accepted_accuracy": 1.0
+          },
+          "S": {
+            "clips": 8,
+            "accuracy": 1.0,
+            "accepted": 8,
+            "accepted_accuracy": 1.0
+          },
+          "T": {
+            "clips": 5,
+            "accuracy": 1.0,
+            "accepted": 5,
+            "accepted_accuracy": 1.0
+          },
+          "U": {
+            "clips": 18,
+            "accuracy": 1.0,
+            "accepted": 8,
+            "accepted_accuracy": 1.0
+          },
+          "V": {
+            "clips": 12,
+            "accuracy": 0.6666666666666666,
+            "accepted": 0,
+            "accepted_accuracy": null
+          },
+          "W": {
+            "clips": 5,
+            "accuracy": 1.0,
+            "accepted": 4,
+            "accepted_accuracy": 1.0
+          },
+          "X": {
+            "clips": 4,
+            "accuracy": 1.0,
+            "accepted": 3,
+            "accepted_accuracy": 1.0
+          },
+          "Y": {
+            "clips": 9,
+            "accuracy": 1.0,
+            "accepted": 8,
+            "accepted_accuracy": 1.0
+          },
+          "Z": {
+            "clips": 5,
+            "accuracy": 1.0,
+            "accepted": 5,
+            "accepted_accuracy": 1.0
+          }
+        },
+        "by_participant": {
+          "angel": {
+            "clips": 84,
+            "accuracy": 0.8809523809523809,
+            "accepted": 50,
+            "accepted_accuracy": 1.0
+          },
+          "isaac": {
+            "clips": 38,
+            "accuracy": 0.8947368421052632,
+            "accepted": 26,
+            "accepted_accuracy": 0.9615384615384616
+          },
+          "mathur": {
+            "clips": 49,
+            "accuracy": 0.8163265306122449,
+            "accepted": 32,
+            "accepted_accuracy": 0.96875
+          },
+          "rithika": {
+            "clips": 73,
+            "accuracy": 0.7397260273972602,
+            "accepted": 34,
+            "accepted_accuracy": 0.9117647058823529
+          }
+        }
+      },
+      "validation_mirrored": {
+        "all": {
+          "clips": 244,
+          "accuracy": 0.8032786885245902,
+          "accepted": 145,
+          "accepted_accuracy": 0.9517241379310345
+        },
+        "by_letter": {
+          "A": {
+            "clips": 18,
+            "accuracy": 0.8333333333333334,
+            "accepted": 17,
+            "accepted_accuracy": 0.8823529411764706
+          },
+          "B": {
+            "clips": 13,
+            "accuracy": 1.0,
+            "accepted": 13,
+            "accepted_accuracy": 1.0
+          },
+          "C": {
+            "clips": 5,
+            "accuracy": 1.0,
+            "accepted": 5,
+            "accepted_accuracy": 1.0
+          },
+          "D": {
+            "clips": 12,
+            "accuracy": 0.75,
+            "accepted": 10,
+            "accepted_accuracy": 0.9
+          },
+          "E": {
+            "clips": 13,
+            "accuracy": 0.9230769230769231,
+            "accepted": 12,
+            "accepted_accuracy": 0.9166666666666666
+          },
+          "F": {
+            "clips": 12,
+            "accuracy": 0.8333333333333334,
+            "accepted": 11,
+            "accepted_accuracy": 0.9090909090909091
+          },
+          "G": {
+            "clips": 5,
+            "accuracy": 0.8,
+            "accepted": 4,
+            "accepted_accuracy": 1.0
+          },
+          "I": {
+            "clips": 9,
+            "accuracy": 0.6666666666666666,
+            "accepted": 2,
+            "accepted_accuracy": 1.0
+          },
+          "K": {
+            "clips": 13,
+            "accuracy": 0.9230769230769231,
+            "accepted": 11,
+            "accepted_accuracy": 1.0
+          },
+          "L": {
+            "clips": 13,
+            "accuracy": 0.5384615384615384,
+            "accepted": 1,
+            "accepted_accuracy": 0.0
+          },
+          "M": {
+            "clips": 13,
+            "accuracy": 0.6153846153846154,
+            "accepted": 0,
+            "accepted_accuracy": null
+          },
+          "N": {
+            "clips": 16,
+            "accuracy": 0.375,
+            "accepted": 0,
+            "accepted_accuracy": null
+          },
+          "O": {
+            "clips": 19,
+            "accuracy": 0.6842105263157895,
+            "accepted": 1,
+            "accepted_accuracy": 1.0
+          },
+          "P": {
+            "clips": 10,
+            "accuracy": 0.8,
+            "accepted": 9,
+            "accepted_accuracy": 0.8888888888888888
+          },
+          "Q": {
+            "clips": 7,
+            "accuracy": 1.0,
+            "accepted": 7,
+            "accepted_accuracy": 1.0
+          },
+          "S": {
+            "clips": 8,
+            "accuracy": 0.875,
+            "accepted": 7,
+            "accepted_accuracy": 1.0
+          },
+          "T": {
+            "clips": 5,
+            "accuracy": 1.0,
+            "accepted": 5,
+            "accepted_accuracy": 1.0
+          },
+          "U": {
+            "clips": 18,
+            "accuracy": 1.0,
+            "accepted": 10,
+            "accepted_accuracy": 1.0
+          },
+          "V": {
+            "clips": 12,
+            "accuracy": 0.8333333333333334,
+            "accepted": 0,
+            "accepted_accuracy": null
+          },
+          "W": {
+            "clips": 5,
+            "accuracy": 0.8,
+            "accepted": 4,
+            "accepted_accuracy": 1.0
+          },
+          "X": {
+            "clips": 4,
+            "accuracy": 1.0,
+            "accepted": 4,
+            "accepted_accuracy": 1.0
+          },
+          "Y": {
+            "clips": 9,
+            "accuracy": 0.8888888888888888,
+            "accepted": 7,
+            "accepted_accuracy": 1.0
+          },
+          "Z": {
+            "clips": 5,
+            "accuracy": 1.0,
+            "accepted": 5,
+            "accepted_accuracy": 1.0
+          }
+        },
+        "by_participant": {
+          "angel": {
+            "clips": 84,
+            "accuracy": 0.8452380952380952,
+            "accepted": 52,
+            "accepted_accuracy": 1.0
+          },
+          "isaac": {
+            "clips": 38,
+            "accuracy": 0.9473684210526315,
+            "accepted": 26,
+            "accepted_accuracy": 0.9615384615384616
+          },
+          "mathur": {
+            "clips": 49,
+            "accuracy": 0.7755102040816326,
+            "accepted": 30,
+            "accepted_accuracy": 0.9666666666666667
+          },
+          "rithika": {
+            "clips": 73,
+            "accuracy": 0.6986301369863014,
+            "accepted": 37,
+            "accepted_accuracy": 0.8648648648648649
+          }
+        }
+      },
+      "test_original": {
+        "all": {
+          "clips": 206,
+          "accuracy": 0.7572815533980582,
+          "accepted": 109,
+          "accepted_accuracy": 0.9357798165137615
+        },
+        "by_letter": {
+          "A": {
+            "clips": 17,
+            "accuracy": 1.0,
+            "accepted": 17,
+            "accepted_accuracy": 1.0
+          },
+          "B": {
+            "clips": 12,
+            "accuracy": 1.0,
+            "accepted": 12,
+            "accepted_accuracy": 1.0
+          },
+          "C": {
+            "clips": 4,
+            "accuracy": 1.0,
+            "accepted": 4,
+            "accepted_accuracy": 1.0
+          },
+          "D": {
+            "clips": 10,
+            "accuracy": 1.0,
+            "accepted": 8,
+            "accepted_accuracy": 1.0
+          },
+          "E": {
+            "clips": 12,
+            "accuracy": 0.5833333333333334,
+            "accepted": 3,
+            "accepted_accuracy": 1.0
+          },
+          "F": {
+            "clips": 10,
+            "accuracy": 0.8,
+            "accepted": 8,
+            "accepted_accuracy": 1.0
+          },
+          "G": {
+            "clips": 3,
+            "accuracy": 1.0,
+            "accepted": 3,
+            "accepted_accuracy": 1.0
+          },
+          "I": {
+            "clips": 8,
+            "accuracy": 0.375,
+            "accepted": 1,
+            "accepted_accuracy": 1.0
+          },
+          "K": {
+            "clips": 10,
+            "accuracy": 0.8,
+            "accepted": 8,
+            "accepted_accuracy": 0.875
+          },
+          "L": {
+            "clips": 12,
+            "accuracy": 0.5833333333333334,
+            "accepted": 0,
+            "accepted_accuracy": null
+          },
+          "M": {
+            "clips": 12,
+            "accuracy": 0.75,
+            "accepted": 0,
+            "accepted_accuracy": null
+          },
+          "N": {
+            "clips": 14,
+            "accuracy": 0.2857142857142857,
+            "accepted": 0,
+            "accepted_accuracy": null
+          },
+          "O": {
+            "clips": 17,
+            "accuracy": 0.7058823529411765,
+            "accepted": 3,
+            "accepted_accuracy": 1.0
+          },
+          "P": {
+            "clips": 8,
+            "accuracy": 0.5,
+            "accepted": 8,
+            "accepted_accuracy": 0.5
+          },
+          "Q": {
+            "clips": 5,
+            "accuracy": 0.8,
+            "accepted": 5,
+            "accepted_accuracy": 0.8
+          },
+          "S": {
+            "clips": 5,
+            "accuracy": 1.0,
+            "accepted": 5,
+            "accepted_accuracy": 1.0
+          },
+          "T": {
+            "clips": 4,
+            "accuracy": 0.75,
+            "accepted": 2,
+            "accepted_accuracy": 1.0
+          },
+          "U": {
+            "clips": 16,
+            "accuracy": 0.875,
+            "accepted": 7,
+            "accepted_accuracy": 1.0
+          },
+          "V": {
+            "clips": 11,
+            "accuracy": 0.7272727272727273,
+            "accepted": 0,
+            "accepted_accuracy": null
+          },
+          "W": {
+            "clips": 4,
+            "accuracy": 1.0,
+            "accepted": 4,
+            "accepted_accuracy": 1.0
+          },
+          "X": {
+            "clips": 2,
+            "accuracy": 1.0,
+            "accepted": 2,
+            "accepted_accuracy": 1.0
+          },
+          "Y": {
+            "clips": 7,
+            "accuracy": 0.7142857142857143,
+            "accepted": 6,
+            "accepted_accuracy": 0.8333333333333334
+          },
+          "Z": {
+            "clips": 3,
+            "accuracy": 1.0,
+            "accepted": 3,
+            "accepted_accuracy": 1.0
+          }
+        },
+        "by_participant": {
+          "angel": {
+            "clips": 73,
+            "accuracy": 0.7123287671232876,
+            "accepted": 36,
+            "accepted_accuracy": 0.9166666666666666
+          },
+          "isaac": {
+            "clips": 32,
+            "accuracy": 0.96875,
+            "accepted": 21,
+            "accepted_accuracy": 1.0
+          },
+          "mathur": {
+            "clips": 39,
+            "accuracy": 0.7692307692307693,
+            "accepted": 22,
+            "accepted_accuracy": 1.0
+          },
+          "rithika": {
+            "clips": 62,
+            "accuracy": 0.6935483870967742,
+            "accepted": 30,
+            "accepted_accuracy": 0.8666666666666667
+          }
+        }
+      },
+      "test_mirrored": {
+        "all": {
+          "clips": 206,
+          "accuracy": 0.7669902912621359,
+          "accepted": 118,
+          "accepted_accuracy": 0.9067796610169492
+        },
+        "by_letter": {
+          "A": {
+            "clips": 17,
+            "accuracy": 1.0,
+            "accepted": 16,
+            "accepted_accuracy": 1.0
+          },
+          "B": {
+            "clips": 12,
+            "accuracy": 1.0,
+            "accepted": 12,
+            "accepted_accuracy": 1.0
+          },
+          "C": {
+            "clips": 4,
+            "accuracy": 1.0,
+            "accepted": 3,
+            "accepted_accuracy": 1.0
+          },
+          "D": {
+            "clips": 10,
+            "accuracy": 0.8,
+            "accepted": 8,
+            "accepted_accuracy": 1.0
+          },
+          "E": {
+            "clips": 12,
+            "accuracy": 0.6666666666666666,
+            "accepted": 8,
+            "accepted_accuracy": 0.875
+          },
+          "F": {
+            "clips": 10,
+            "accuracy": 0.8,
+            "accepted": 9,
+            "accepted_accuracy": 0.8888888888888888
+          },
+          "G": {
+            "clips": 3,
+            "accuracy": 1.0,
+            "accepted": 3,
+            "accepted_accuracy": 1.0
+          },
+          "I": {
+            "clips": 8,
+            "accuracy": 0.5,
+            "accepted": 2,
+            "accepted_accuracy": 0.5
+          },
+          "K": {
+            "clips": 10,
+            "accuracy": 0.9,
+            "accepted": 8,
+            "accepted_accuracy": 1.0
+          },
+          "L": {
+            "clips": 12,
+            "accuracy": 0.5,
+            "accepted": 1,
+            "accepted_accuracy": 0.0
+          },
+          "M": {
+            "clips": 12,
+            "accuracy": 0.5833333333333334,
+            "accepted": 0,
+            "accepted_accuracy": null
+          },
+          "N": {
+            "clips": 14,
+            "accuracy": 0.35714285714285715,
+            "accepted": 0,
+            "accepted_accuracy": null
+          },
+          "O": {
+            "clips": 17,
+            "accuracy": 0.8235294117647058,
+            "accepted": 5,
+            "accepted_accuracy": 1.0
+          },
+          "P": {
+            "clips": 8,
+            "accuracy": 0.5,
+            "accepted": 7,
+            "accepted_accuracy": 0.5714285714285714
+          },
+          "Q": {
+            "clips": 5,
+            "accuracy": 0.8,
+            "accepted": 5,
+            "accepted_accuracy": 0.8
+          },
+          "S": {
+            "clips": 5,
+            "accuracy": 1.0,
+            "accepted": 5,
+            "accepted_accuracy": 1.0
+          },
+          "T": {
+            "clips": 4,
+            "accuracy": 0.5,
+            "accepted": 3,
+            "accepted_accuracy": 0.6666666666666666
+          },
+          "U": {
+            "clips": 16,
+            "accuracy": 0.875,
+            "accepted": 7,
+            "accepted_accuracy": 0.8571428571428571
+          },
+          "V": {
+            "clips": 11,
+            "accuracy": 0.7272727272727273,
+            "accepted": 1,
+            "accepted_accuracy": 0.0
+          },
+          "W": {
+            "clips": 4,
+            "accuracy": 1.0,
+            "accepted": 4,
+            "accepted_accuracy": 1.0
+          },
+          "X": {
+            "clips": 2,
+            "accuracy": 1.0,
+            "accepted": 2,
+            "accepted_accuracy": 1.0
+          },
+          "Y": {
+            "clips": 7,
+            "accuracy": 1.0,
+            "accepted": 6,
+            "accepted_accuracy": 1.0
+          },
+          "Z": {
+            "clips": 3,
+            "accuracy": 1.0,
+            "accepted": 3,
+            "accepted_accuracy": 1.0
+          }
+        },
+        "by_participant": {
+          "angel": {
+            "clips": 73,
+            "accuracy": 0.7534246575342466,
+            "accepted": 40,
+            "accepted_accuracy": 0.875
+          },
+          "isaac": {
+            "clips": 32,
+            "accuracy": 0.96875,
+            "accepted": 20,
+            "accepted_accuracy": 1.0
+          },
+          "mathur": {
+            "clips": 39,
+            "accuracy": 0.7692307692307693,
+            "accepted": 23,
+            "accepted_accuracy": 0.9565217391304348
+          },
+          "rithika": {
+            "clips": 62,
+            "accuracy": 0.6774193548387096,
+            "accepted": 35,
+            "accepted_accuracy": 0.8571428571428571
+          }
+        }
+      }
+    },
+    "shape_contact": {
+      "validation_original": {
+        "all": {
+          "clips": 244,
+          "accuracy": 0.8647540983606558,
+          "accepted": 182,
+          "accepted_accuracy": 0.9725274725274725
+        },
+        "by_letter": {
+          "A": {
+            "clips": 18,
+            "accuracy": 0.9444444444444444,
+            "accepted": 17,
+            "accepted_accuracy": 1.0
+          },
+          "B": {
+            "clips": 13,
+            "accuracy": 1.0,
+            "accepted": 13,
+            "accepted_accuracy": 1.0
+          },
+          "C": {
+            "clips": 5,
+            "accuracy": 1.0,
+            "accepted": 5,
+            "accepted_accuracy": 1.0
+          },
+          "D": {
+            "clips": 12,
+            "accuracy": 1.0,
+            "accepted": 12,
+            "accepted_accuracy": 1.0
+          },
+          "E": {
+            "clips": 13,
+            "accuracy": 1.0,
+            "accepted": 12,
+            "accepted_accuracy": 1.0
+          },
+          "F": {
+            "clips": 12,
+            "accuracy": 0.8333333333333334,
+            "accepted": 11,
+            "accepted_accuracy": 0.9090909090909091
+          },
+          "G": {
+            "clips": 5,
+            "accuracy": 1.0,
+            "accepted": 5,
+            "accepted_accuracy": 1.0
+          },
+          "I": {
+            "clips": 9,
+            "accuracy": 0.6666666666666666,
+            "accepted": 6,
+            "accepted_accuracy": 0.6666666666666666
+          },
+          "K": {
+            "clips": 13,
+            "accuracy": 1.0,
+            "accepted": 13,
+            "accepted_accuracy": 1.0
+          },
+          "L": {
+            "clips": 13,
+            "accuracy": 0.6923076923076923,
+            "accepted": 0,
+            "accepted_accuracy": null
+          },
+          "M": {
+            "clips": 13,
+            "accuracy": 0.8461538461538461,
+            "accepted": 5,
+            "accepted_accuracy": 1.0
+          },
+          "N": {
+            "clips": 16,
+            "accuracy": 0.375,
+            "accepted": 0,
+            "accepted_accuracy": null
+          },
+          "O": {
+            "clips": 19,
+            "accuracy": 0.7894736842105263,
+            "accepted": 15,
+            "accepted_accuracy": 0.8666666666666667
+          },
+          "P": {
+            "clips": 10,
+            "accuracy": 0.9,
+            "accepted": 9,
+            "accepted_accuracy": 1.0
+          },
+          "Q": {
+            "clips": 7,
+            "accuracy": 1.0,
+            "accepted": 7,
+            "accepted_accuracy": 1.0
+          },
+          "S": {
+            "clips": 8,
+            "accuracy": 1.0,
+            "accepted": 7,
+            "accepted_accuracy": 1.0
+          },
+          "T": {
+            "clips": 5,
+            "accuracy": 1.0,
+            "accepted": 5,
+            "accepted_accuracy": 1.0
+          },
+          "U": {
+            "clips": 18,
+            "accuracy": 1.0,
+            "accepted": 17,
+            "accepted_accuracy": 1.0
+          },
+          "V": {
+            "clips": 12,
+            "accuracy": 0.5,
+            "accepted": 1,
+            "accepted_accuracy": 1.0
+          },
+          "W": {
+            "clips": 5,
+            "accuracy": 1.0,
+            "accepted": 5,
+            "accepted_accuracy": 1.0
+          },
+          "X": {
+            "clips": 4,
+            "accuracy": 1.0,
+            "accepted": 4,
+            "accepted_accuracy": 1.0
+          },
+          "Y": {
+            "clips": 9,
+            "accuracy": 1.0,
+            "accepted": 9,
+            "accepted_accuracy": 1.0
+          },
+          "Z": {
+            "clips": 5,
+            "accuracy": 1.0,
+            "accepted": 4,
+            "accepted_accuracy": 1.0
+          }
+        },
+        "by_participant": {
+          "angel": {
+            "clips": 84,
+            "accuracy": 0.8452380952380952,
+            "accepted": 62,
+            "accepted_accuracy": 0.967741935483871
+          },
+          "isaac": {
+            "clips": 38,
+            "accuracy": 0.9473684210526315,
+            "accepted": 33,
+            "accepted_accuracy": 0.9696969696969697
+          },
+          "mathur": {
+            "clips": 49,
+            "accuracy": 0.8571428571428571,
+            "accepted": 36,
+            "accepted_accuracy": 1.0
+          },
+          "rithika": {
+            "clips": 73,
+            "accuracy": 0.8493150684931506,
+            "accepted": 51,
+            "accepted_accuracy": 0.9607843137254902
+          }
+        }
+      },
+      "validation_mirrored": {
+        "all": {
+          "clips": 244,
+          "accuracy": 0.8811475409836066,
+          "accepted": 182,
+          "accepted_accuracy": 0.978021978021978
+        },
+        "by_letter": {
+          "A": {
+            "clips": 18,
+            "accuracy": 1.0,
+            "accepted": 18,
+            "accepted_accuracy": 1.0
+          },
+          "B": {
+            "clips": 13,
+            "accuracy": 1.0,
+            "accepted": 13,
+            "accepted_accuracy": 1.0
+          },
+          "C": {
+            "clips": 5,
+            "accuracy": 1.0,
+            "accepted": 5,
+            "accepted_accuracy": 1.0
+          },
+          "D": {
+            "clips": 12,
+            "accuracy": 0.9166666666666666,
+            "accepted": 12,
+            "accepted_accuracy": 0.9166666666666666
+          },
+          "E": {
+            "clips": 13,
+            "accuracy": 1.0,
+            "accepted": 12,
+            "accepted_accuracy": 1.0
+          },
+          "F": {
+            "clips": 12,
+            "accuracy": 1.0,
+            "accepted": 10,
+            "accepted_accuracy": 1.0
+          },
+          "G": {
+            "clips": 5,
+            "accuracy": 1.0,
+            "accepted": 5,
+            "accepted_accuracy": 1.0
+          },
+          "I": {
+            "clips": 9,
+            "accuracy": 0.5555555555555556,
+            "accepted": 6,
+            "accepted_accuracy": 0.8333333333333334
+          },
+          "K": {
+            "clips": 13,
+            "accuracy": 1.0,
+            "accepted": 13,
+            "accepted_accuracy": 1.0
+          },
+          "L": {
+            "clips": 13,
+            "accuracy": 0.6153846153846154,
+            "accepted": 0,
+            "accepted_accuracy": null
+          },
+          "M": {
+            "clips": 13,
+            "accuracy": 0.7692307692307693,
+            "accepted": 6,
+            "accepted_accuracy": 0.8333333333333334
+          },
+          "N": {
+            "clips": 16,
+            "accuracy": 0.4375,
+            "accepted": 0,
+            "accepted_accuracy": null
+          },
+          "O": {
+            "clips": 19,
+            "accuracy": 0.9473684210526315,
+            "accepted": 14,
+            "accepted_accuracy": 1.0
+          },
+          "P": {
+            "clips": 10,
+            "accuracy": 0.9,
+            "accepted": 10,
+            "accepted_accuracy": 0.9
+          },
+          "Q": {
+            "clips": 7,
+            "accuracy": 1.0,
+            "accepted": 6,
+            "accepted_accuracy": 1.0
+          },
+          "S": {
+            "clips": 8,
+            "accuracy": 1.0,
+            "accepted": 7,
+            "accepted_accuracy": 1.0
+          },
+          "T": {
+            "clips": 5,
+            "accuracy": 1.0,
+            "accepted": 5,
+            "accepted_accuracy": 1.0
+          },
+          "U": {
+            "clips": 18,
+            "accuracy": 1.0,
+            "accepted": 17,
+            "accepted_accuracy": 1.0
+          },
+          "V": {
+            "clips": 12,
+            "accuracy": 0.5833333333333334,
+            "accepted": 1,
+            "accepted_accuracy": 1.0
+          },
+          "W": {
+            "clips": 5,
+            "accuracy": 1.0,
+            "accepted": 5,
+            "accepted_accuracy": 1.0
+          },
+          "X": {
+            "clips": 4,
+            "accuracy": 1.0,
+            "accepted": 3,
+            "accepted_accuracy": 1.0
+          },
+          "Y": {
+            "clips": 9,
+            "accuracy": 1.0,
+            "accepted": 9,
+            "accepted_accuracy": 1.0
+          },
+          "Z": {
+            "clips": 5,
+            "accuracy": 1.0,
+            "accepted": 5,
+            "accepted_accuracy": 1.0
+          }
+        },
+        "by_participant": {
+          "angel": {
+            "clips": 84,
+            "accuracy": 0.8571428571428571,
+            "accepted": 62,
+            "accepted_accuracy": 0.9838709677419355
+          },
+          "isaac": {
+            "clips": 38,
+            "accuracy": 1.0,
+            "accepted": 31,
+            "accepted_accuracy": 1.0
+          },
+          "mathur": {
+            "clips": 49,
+            "accuracy": 0.8571428571428571,
+            "accepted": 39,
+            "accepted_accuracy": 0.9743589743589743
+          },
+          "rithika": {
+            "clips": 73,
+            "accuracy": 0.863013698630137,
+            "accepted": 50,
+            "accepted_accuracy": 0.96
+          }
+        }
+      },
+      "test_original": {
+        "all": {
+          "clips": 206,
+          "accuracy": 0.8495145631067961,
+          "accepted": 149,
+          "accepted_accuracy": 0.9731543624161074
+        },
+        "by_letter": {
+          "A": {
+            "clips": 17,
+            "accuracy": 1.0,
+            "accepted": 17,
+            "accepted_accuracy": 1.0
+          },
+          "B": {
+            "clips": 12,
+            "accuracy": 1.0,
+            "accepted": 12,
+            "accepted_accuracy": 1.0
+          },
+          "C": {
+            "clips": 4,
+            "accuracy": 1.0,
+            "accepted": 4,
+            "accepted_accuracy": 1.0
+          },
+          "D": {
+            "clips": 10,
+            "accuracy": 1.0,
+            "accepted": 10,
+            "accepted_accuracy": 1.0
+          },
+          "E": {
+            "clips": 12,
+            "accuracy": 0.8333333333333334,
+            "accepted": 10,
+            "accepted_accuracy": 1.0
+          },
+          "F": {
+            "clips": 10,
+            "accuracy": 0.9,
+            "accepted": 9,
+            "accepted_accuracy": 1.0
+          },
+          "G": {
+            "clips": 3,
+            "accuracy": 1.0,
+            "accepted": 3,
+            "accepted_accuracy": 1.0
+          },
+          "I": {
+            "clips": 8,
+            "accuracy": 0.625,
+            "accepted": 5,
+            "accepted_accuracy": 1.0
+          },
+          "K": {
+            "clips": 10,
+            "accuracy": 0.9,
+            "accepted": 9,
+            "accepted_accuracy": 1.0
+          },
+          "L": {
+            "clips": 12,
+            "accuracy": 0.8333333333333334,
+            "accepted": 0,
+            "accepted_accuracy": null
+          },
+          "M": {
+            "clips": 12,
+            "accuracy": 0.6666666666666666,
+            "accepted": 5,
+            "accepted_accuracy": 0.8
+          },
+          "N": {
+            "clips": 14,
+            "accuracy": 0.5,
+            "accepted": 0,
+            "accepted_accuracy": null
+          },
+          "O": {
+            "clips": 17,
+            "accuracy": 1.0,
+            "accepted": 12,
+            "accepted_accuracy": 1.0
+          },
+          "P": {
+            "clips": 8,
+            "accuracy": 0.625,
+            "accepted": 8,
+            "accepted_accuracy": 0.625
+          },
+          "Q": {
+            "clips": 5,
+            "accuracy": 1.0,
+            "accepted": 5,
+            "accepted_accuracy": 1.0
+          },
+          "S": {
+            "clips": 5,
+            "accuracy": 1.0,
+            "accepted": 5,
+            "accepted_accuracy": 1.0
+          },
+          "T": {
+            "clips": 4,
+            "accuracy": 0.75,
+            "accepted": 3,
+            "accepted_accuracy": 1.0
+          },
+          "U": {
+            "clips": 16,
+            "accuracy": 0.875,
+            "accepted": 14,
+            "accepted_accuracy": 1.0
+          },
+          "V": {
+            "clips": 11,
+            "accuracy": 0.5454545454545454,
+            "accepted": 3,
+            "accepted_accuracy": 1.0
+          },
+          "W": {
+            "clips": 4,
+            "accuracy": 1.0,
+            "accepted": 4,
+            "accepted_accuracy": 1.0
+          },
+          "X": {
+            "clips": 2,
+            "accuracy": 1.0,
+            "accepted": 2,
+            "accepted_accuracy": 1.0
+          },
+          "Y": {
+            "clips": 7,
+            "accuracy": 1.0,
+            "accepted": 6,
+            "accepted_accuracy": 1.0
+          },
+          "Z": {
+            "clips": 3,
+            "accuracy": 1.0,
+            "accepted": 3,
+            "accepted_accuracy": 1.0
+          }
+        },
+        "by_participant": {
+          "angel": {
+            "clips": 73,
+            "accuracy": 0.8767123287671232,
+            "accepted": 51,
+            "accepted_accuracy": 0.9607843137254902
+          },
+          "isaac": {
+            "clips": 32,
+            "accuracy": 0.9375,
+            "accepted": 25,
+            "accepted_accuracy": 1.0
+          },
+          "mathur": {
+            "clips": 39,
+            "accuracy": 0.8461538461538461,
+            "accepted": 30,
+            "accepted_accuracy": 1.0
+          },
+          "rithika": {
+            "clips": 62,
+            "accuracy": 0.7741935483870968,
+            "accepted": 43,
+            "accepted_accuracy": 0.9534883720930233
+          }
+        }
+      },
+      "test_mirrored": {
+        "all": {
+          "clips": 206,
+          "accuracy": 0.8592233009708737,
+          "accepted": 159,
+          "accepted_accuracy": 0.949685534591195
+        },
+        "by_letter": {
+          "A": {
+            "clips": 17,
+            "accuracy": 1.0,
+            "accepted": 16,
+            "accepted_accuracy": 1.0
+          },
+          "B": {
+            "clips": 12,
+            "accuracy": 1.0,
+            "accepted": 12,
+            "accepted_accuracy": 1.0
+          },
+          "C": {
+            "clips": 4,
+            "accuracy": 1.0,
+            "accepted": 4,
+            "accepted_accuracy": 1.0
+          },
+          "D": {
+            "clips": 10,
+            "accuracy": 1.0,
+            "accepted": 10,
+            "accepted_accuracy": 1.0
+          },
+          "E": {
+            "clips": 12,
+            "accuracy": 0.8333333333333334,
+            "accepted": 10,
+            "accepted_accuracy": 0.9
+          },
+          "F": {
+            "clips": 10,
+            "accuracy": 0.9,
+            "accepted": 9,
+            "accepted_accuracy": 1.0
+          },
+          "G": {
+            "clips": 3,
+            "accuracy": 1.0,
+            "accepted": 3,
+            "accepted_accuracy": 1.0
+          },
+          "I": {
+            "clips": 8,
+            "accuracy": 0.75,
+            "accepted": 7,
+            "accepted_accuracy": 0.8571428571428571
+          },
+          "K": {
+            "clips": 10,
+            "accuracy": 1.0,
+            "accepted": 10,
+            "accepted_accuracy": 1.0
+          },
+          "L": {
+            "clips": 12,
+            "accuracy": 0.5833333333333334,
+            "accepted": 2,
+            "accepted_accuracy": 0.0
+          },
+          "M": {
+            "clips": 12,
+            "accuracy": 0.6666666666666666,
+            "accepted": 5,
+            "accepted_accuracy": 0.8
+          },
+          "N": {
+            "clips": 14,
+            "accuracy": 0.6428571428571429,
+            "accepted": 0,
+            "accepted_accuracy": null
+          },
+          "O": {
+            "clips": 17,
+            "accuracy": 0.9411764705882353,
+            "accepted": 16,
+            "accepted_accuracy": 1.0
+          },
+          "P": {
+            "clips": 8,
+            "accuracy": 0.625,
+            "accepted": 8,
+            "accepted_accuracy": 0.625
+          },
+          "Q": {
+            "clips": 5,
+            "accuracy": 1.0,
+            "accepted": 5,
+            "accepted_accuracy": 1.0
+          },
+          "S": {
+            "clips": 5,
+            "accuracy": 1.0,
+            "accepted": 5,
+            "accepted_accuracy": 1.0
+          },
+          "T": {
+            "clips": 4,
+            "accuracy": 0.75,
+            "accepted": 3,
+            "accepted_accuracy": 1.0
+          },
+          "U": {
+            "clips": 16,
+            "accuracy": 1.0,
+            "accepted": 15,
+            "accepted_accuracy": 1.0
+          },
+          "V": {
+            "clips": 11,
+            "accuracy": 0.5454545454545454,
+            "accepted": 3,
+            "accepted_accuracy": 1.0
+          },
+          "W": {
+            "clips": 4,
+            "accuracy": 1.0,
+            "accepted": 4,
+            "accepted_accuracy": 1.0
+          },
+          "X": {
+            "clips": 2,
+            "accuracy": 1.0,
+            "accepted": 2,
+            "accepted_accuracy": 1.0
+          },
+          "Y": {
+            "clips": 7,
+            "accuracy": 1.0,
+            "accepted": 7,
+            "accepted_accuracy": 1.0
+          },
+          "Z": {
+            "clips": 3,
+            "accuracy": 1.0,
+            "accepted": 3,
+            "accepted_accuracy": 1.0
+          }
+        },
+        "by_participant": {
+          "angel": {
+            "clips": 73,
+            "accuracy": 0.863013698630137,
+            "accepted": 51,
+            "accepted_accuracy": 0.9607843137254902
+          },
+          "isaac": {
+            "clips": 32,
+            "accuracy": 0.96875,
+            "accepted": 28,
+            "accepted_accuracy": 1.0
+          },
+          "mathur": {
+            "clips": 39,
+            "accuracy": 0.8717948717948718,
+            "accepted": 30,
+            "accepted_accuracy": 1.0
+          },
+          "rithika": {
+            "clips": 62,
+            "accuracy": 0.7903225806451613,
+            "accepted": 50,
+            "accepted_accuracy": 0.88
+          }
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Test recordings were inspected during earlier error analysis; this follow-up test comparison is exploratory, not a fresh independent final test.",
+    "All signers appear in training; results do not establish unseen-user accuracy.",
+    "Mirrored landmarks are synthetic; camera performance with each hand needs checking."
+  ]
+}

@@ -14,12 +14,7 @@ raw_data/
 *.npz
 *.zip
 
-# Trained models
-models/
-checkpoints/
-*.keras
-*.h5
-*.onnx
+
 
 # Detailed predictions
 validation_predictions.csv

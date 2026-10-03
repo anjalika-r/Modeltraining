@@ -1,0 +1,61 @@
+{
+  "input_shape": [
+    1618,
+    18,
+    227
+  ],
+  "num_classes": 23,
+  "training_sequences": 2336,
+  "validation_sequences": 244,
+  "original_training_sequences": 1168,
+  "mirrored_training_sequences": 1168,
+  "validation_participant": null,
+  "split_strategy": "explicit_recording_split",
+  "validation_participants": [
+    "angel",
+    "isaac",
+    "mathur",
+    "rithika"
+  ],
+  "excluded_sequences": 0,
+  "best_epoch": 53,
+  "best_epoch_val_loss": 0.5355380177497864,
+  "best_epoch_val_accuracy": 0.8278688788414001,
+  "restored_model_validation_loss": 0.5355380177497864,
+  "restored_model_validation_accuracy": 0.8278688788414001,
+  "epochs_completed": 68,
+  "hyperparameters": {
+    "data_dir": "C:\\Users\\mathu\\Modeltraining\\data\\AIRV_no_r",
+    "output_dir": "C:\\Users\\mathu\\Modeltraining\\models\\letters_airv_no_r_mirrored",
+    "input_file": "sequences_body_hands.npy",
+    "mirror_augmentation": true,
+    "feature_set": "baseline",
+    "val_participant": null,
+    "test_participant": null,
+    "participants": null,
+    "previous_split_manifest": null,
+    "split_manifest": "C:\\Users\\mathu\\Modeltraining\\data\\AIRV_no_r\\split_manifest.csv",
+    "validation_fraction": 0.15,
+    "epochs": 100,
+    "batch_size": 32,
+    "learning_rate": 0.0005,
+    "patience": 15,
+    "lr_patience": 6,
+    "lr_factor": 0.5,
+    "min_lr": 1e-06,
+    "seed": 42,
+    "weighting": "class",
+    "frame_dense_units": 128,
+    "lstm_units": 64,
+    "dense_units": 64,
+    "dropout": 0.4,
+    "recurrent_dropout": 0.0,
+    "bidirectional": false,
+    "l2": 0.0,
+    "input_shape": [
+      1618,
+      18,
+      227
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "input_shape": [
+    1598,
+    18,
+    227
+  ],
+  "num_classes": 24,
+  "training_sequences": 1245,
+  "validation_sequences": 220,
+  "validation_participant": null,
+  "split_strategy": "within_participant_recordings",
+  "validation_participants": [
+    "angel",
+    "mathur",
+    "rithika"
+  ],
+  "excluded_sequences": 133,
+  "best_epoch": 64,
+  "best_epoch_val_loss": 0.6407830715179443,
+  "best_epoch_val_accuracy": 0.8090909123420715,
+  "restored_model_validation_loss": 0.6407830715179443,
+  "restored_model_validation_accuracy": 0.8090909123420715,
+  "epochs_completed": 79,
+  "hyperparameters": {
+    "data_dir": "C:\\Users\\mathu\\Modeltraining\\data\\letter_dataset",
+    "output_dir": "C:\\Users\\mathu\\Modeltraining\\models\\letters_three_signers",
+    "input_file": "sequences_body_hands.npy",
+    "val_participant": null,
+    "test_participant": null,
+    "participants": [
+      "angel",
+      "rithika",
+      "mathur"
+    ],
+    "validation_fraction": 0.15,
+    "epochs": 100,
+    "batch_size": 32,
+    "learning_rate": 0.0005,
+    "patience": 15,
+    "lr_patience": 6,
+    "lr_factor": 0.5,
+    "min_lr": 1e-06,
+    "seed": 42,
+    "frame_dense_units": 128,
+    "lstm_units": 64,
+    "dense_units": 64,
+    "dropout": 0.4,
+    "recurrent_dropout": 0.0,
+    "bidirectional": false,
+    "l2": 0.0,
+    "input_shape": [
+      1598,
+      18,
+      227
+    ]
+  }
+}

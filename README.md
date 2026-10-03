@@ -344,6 +344,46 @@ README for configuration and the localhost exercise URL. No model files need
 to be copied to the frontend. This remains practice feedback with the existing
 model limitations, not a validated technique assessment.
 
+## AIRV experiment without R (2026-10-02)
+
+`scripts/prepare_airv_experiment.py` prepares `data/AIRV_no_r` from the preserved
+`data/AIRV_dataset`, removes all R recordings and normalizes Isaac's participant
+ID. It retains earlier validation assignments for the other three signers and
+reserves a final recording-level test set before training. Exact duplicate
+tensors stay together. The trainer's `--split-manifest` option loads these frozen
+train/validation/test assignments; mirror augmentation applies to training only.
+
+The separate `models/letters_airv_no_r_mirrored` checkpoint uses baseline features
+and 23 letters. It trains on 1,168 originals plus 1,168 mirrors, validates on 244
+recordings and tests on 206. Selected epoch 53 of 68 scores 82.79% validation and
+75.73% test accuracy. The current mirrored model scores 75.41% on the same
+validation clips. Isaac improves from 55.26% to 89.47% validation accuracy, while
+Rithika declines from 78.08% to 73.97%. At score 0.85, the candidate accepts 109
+of 206 original test clips; 93.58% of accepted predictions are correct.
+
+These are familiar-signer recording results. Synthetic mirror tests do not
+establish real left-handed camera performance, and the experiment changes more
+than Isaac's data alone. The website checkpoint has not been replaced. Detailed
+results and reproduction commands are in the model directory's `report.md`.
+
+```powershell
+python scripts/predict_webcam.py --model-dir models/letters_airv_no_r_mirrored --threshold 0.85
+```
+
+The follow-up `models/letters_airv_no_r_shape_contact` changes only the feature
+representation to 497 inputs, preserving the AIRV split, seed and mirroring.
+Selected epoch 53 of 68 scores 86.48% original validation accuracy versus 82.79%
+for baseline. At threshold 0.85, it accepts 182/244 validation clips at 97.25%
+accepted accuracy, versus 142/244 at 96.48%. Original test accuracy rises from
+75.73% to 84.95%, but this follow-up is exploratory because those test errors
+were inspected when choosing the feature experiment. I remains a weakness;
+Angel validation accuracy decreases while the other three signers improve.
+See its `report.md` and `feature_comparison.json` for per-letter results.
+
+```powershell
+python scripts/predict_webcam.py --model-dir models/letters_airv_no_r_shape_contact --threshold 0.85
+```
+
 ## Verification commands
 
 ```powershell

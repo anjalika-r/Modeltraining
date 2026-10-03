@@ -1,0 +1,1092 @@
+{
+  "current_model": {
+    "validation_original": {
+      "all": {
+        "clips": 244,
+        "accuracy": 0.7540983606557377,
+        "accepted_at_85_percent": 160,
+        "accepted_accuracy": 0.9
+      },
+      "by_participant": {
+        "angel": {
+          "clips": 84,
+          "accuracy": 0.8095238095238095,
+          "accepted_at_85_percent": 56,
+          "accepted_accuracy": 0.9464285714285714
+        },
+        "isaac": {
+          "clips": 38,
+          "accuracy": 0.5526315789473685,
+          "accepted_at_85_percent": 25,
+          "accepted_accuracy": 0.72
+        },
+        "mathur": {
+          "clips": 49,
+          "accuracy": 0.7755102040816326,
+          "accepted_at_85_percent": 32,
+          "accepted_accuracy": 0.96875
+        },
+        "rithika": {
+          "clips": 73,
+          "accuracy": 0.7808219178082192,
+          "accepted_at_85_percent": 47,
+          "accepted_accuracy": 0.8936170212765957
+        }
+      },
+      "by_letter": {
+        "A": {
+          "clips": 18,
+          "accuracy": 0.8333333333333334,
+          "accepted_at_85_percent": 16,
+          "accepted_accuracy": 0.9375
+        },
+        "B": {
+          "clips": 13,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 13,
+          "accepted_accuracy": 1.0
+        },
+        "C": {
+          "clips": 5,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 5,
+          "accepted_accuracy": 1.0
+        },
+        "D": {
+          "clips": 12,
+          "accuracy": 0.8333333333333334,
+          "accepted_at_85_percent": 12,
+          "accepted_accuracy": 0.8333333333333334
+        },
+        "E": {
+          "clips": 13,
+          "accuracy": 0.7692307692307693,
+          "accepted_at_85_percent": 12,
+          "accepted_accuracy": 0.8333333333333334
+        },
+        "F": {
+          "clips": 12,
+          "accuracy": 0.8333333333333334,
+          "accepted_at_85_percent": 12,
+          "accepted_accuracy": 0.8333333333333334
+        },
+        "G": {
+          "clips": 5,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 5,
+          "accepted_accuracy": 1.0
+        },
+        "I": {
+          "clips": 9,
+          "accuracy": 0.6666666666666666,
+          "accepted_at_85_percent": 7,
+          "accepted_accuracy": 0.7142857142857143
+        },
+        "K": {
+          "clips": 13,
+          "accuracy": 0.9230769230769231,
+          "accepted_at_85_percent": 12,
+          "accepted_accuracy": 1.0
+        },
+        "L": {
+          "clips": 13,
+          "accuracy": 0.15384615384615385,
+          "accepted_at_85_percent": 0,
+          "accepted_accuracy": null
+        },
+        "M": {
+          "clips": 13,
+          "accuracy": 0.5384615384615384,
+          "accepted_at_85_percent": 0,
+          "accepted_accuracy": null
+        },
+        "N": {
+          "clips": 16,
+          "accuracy": 0.375,
+          "accepted_at_85_percent": 0,
+          "accepted_accuracy": null
+        },
+        "O": {
+          "clips": 19,
+          "accuracy": 0.5263157894736842,
+          "accepted_at_85_percent": 7,
+          "accepted_accuracy": 0.5714285714285714
+        },
+        "P": {
+          "clips": 10,
+          "accuracy": 0.9,
+          "accepted_at_85_percent": 9,
+          "accepted_accuracy": 0.8888888888888888
+        },
+        "Q": {
+          "clips": 7,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 7,
+          "accepted_accuracy": 1.0
+        },
+        "S": {
+          "clips": 8,
+          "accuracy": 0.875,
+          "accepted_at_85_percent": 7,
+          "accepted_accuracy": 0.8571428571428571
+        },
+        "T": {
+          "clips": 5,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 5,
+          "accepted_accuracy": 1.0
+        },
+        "U": {
+          "clips": 18,
+          "accuracy": 0.8333333333333334,
+          "accepted_at_85_percent": 3,
+          "accepted_accuracy": 1.0
+        },
+        "V": {
+          "clips": 12,
+          "accuracy": 0.75,
+          "accepted_at_85_percent": 5,
+          "accepted_accuracy": 1.0
+        },
+        "W": {
+          "clips": 5,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 5,
+          "accepted_accuracy": 1.0
+        },
+        "X": {
+          "clips": 4,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 4,
+          "accepted_accuracy": 1.0
+        },
+        "Y": {
+          "clips": 9,
+          "accuracy": 0.7777777777777778,
+          "accepted_at_85_percent": 9,
+          "accepted_accuracy": 0.7777777777777778
+        },
+        "Z": {
+          "clips": 5,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 5,
+          "accepted_accuracy": 1.0
+        }
+      },
+      "original_three_signers": {
+        "clips": 206,
+        "accuracy": 0.7912621359223301,
+        "accepted_at_85_percent": 135,
+        "accepted_accuracy": 0.9333333333333333
+      }
+    },
+    "validation_mirrored": {
+      "all": {
+        "clips": 244,
+        "accuracy": 0.7745901639344263,
+        "accepted_at_85_percent": 165,
+        "accepted_accuracy": 0.9030303030303031
+      },
+      "by_participant": {
+        "angel": {
+          "clips": 84,
+          "accuracy": 0.7976190476190477,
+          "accepted_at_85_percent": 57,
+          "accepted_accuracy": 0.9473684210526315
+        },
+        "isaac": {
+          "clips": 38,
+          "accuracy": 0.6842105263157895,
+          "accepted_at_85_percent": 27,
+          "accepted_accuracy": 0.7777777777777778
+        },
+        "mathur": {
+          "clips": 49,
+          "accuracy": 0.7959183673469388,
+          "accepted_at_85_percent": 31,
+          "accepted_accuracy": 0.967741935483871
+        },
+        "rithika": {
+          "clips": 73,
+          "accuracy": 0.7808219178082192,
+          "accepted_at_85_percent": 50,
+          "accepted_accuracy": 0.88
+        }
+      },
+      "by_letter": {
+        "A": {
+          "clips": 18,
+          "accuracy": 0.7777777777777778,
+          "accepted_at_85_percent": 15,
+          "accepted_accuracy": 0.9333333333333333
+        },
+        "B": {
+          "clips": 13,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 13,
+          "accepted_accuracy": 1.0
+        },
+        "C": {
+          "clips": 5,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 5,
+          "accepted_accuracy": 1.0
+        },
+        "D": {
+          "clips": 12,
+          "accuracy": 0.9166666666666666,
+          "accepted_at_85_percent": 11,
+          "accepted_accuracy": 0.9090909090909091
+        },
+        "E": {
+          "clips": 13,
+          "accuracy": 0.8461538461538461,
+          "accepted_at_85_percent": 11,
+          "accepted_accuracy": 0.9090909090909091
+        },
+        "F": {
+          "clips": 12,
+          "accuracy": 0.8333333333333334,
+          "accepted_at_85_percent": 12,
+          "accepted_accuracy": 0.8333333333333334
+        },
+        "G": {
+          "clips": 5,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 5,
+          "accepted_accuracy": 1.0
+        },
+        "I": {
+          "clips": 9,
+          "accuracy": 0.6666666666666666,
+          "accepted_at_85_percent": 7,
+          "accepted_accuracy": 0.5714285714285714
+        },
+        "K": {
+          "clips": 13,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 12,
+          "accepted_accuracy": 1.0
+        },
+        "L": {
+          "clips": 13,
+          "accuracy": 0.23076923076923078,
+          "accepted_at_85_percent": 0,
+          "accepted_accuracy": null
+        },
+        "M": {
+          "clips": 13,
+          "accuracy": 0.5384615384615384,
+          "accepted_at_85_percent": 0,
+          "accepted_accuracy": null
+        },
+        "N": {
+          "clips": 16,
+          "accuracy": 0.125,
+          "accepted_at_85_percent": 1,
+          "accepted_accuracy": 0.0
+        },
+        "O": {
+          "clips": 19,
+          "accuracy": 0.5789473684210527,
+          "accepted_at_85_percent": 12,
+          "accepted_accuracy": 0.5833333333333334
+        },
+        "P": {
+          "clips": 10,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 9,
+          "accepted_accuracy": 1.0
+        },
+        "Q": {
+          "clips": 7,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 7,
+          "accepted_accuracy": 1.0
+        },
+        "S": {
+          "clips": 8,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 7,
+          "accepted_accuracy": 1.0
+        },
+        "T": {
+          "clips": 5,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 5,
+          "accepted_accuracy": 1.0
+        },
+        "U": {
+          "clips": 18,
+          "accuracy": 0.9444444444444444,
+          "accepted_at_85_percent": 5,
+          "accepted_accuracy": 1.0
+        },
+        "V": {
+          "clips": 12,
+          "accuracy": 0.8333333333333334,
+          "accepted_at_85_percent": 5,
+          "accepted_accuracy": 1.0
+        },
+        "W": {
+          "clips": 5,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 5,
+          "accepted_accuracy": 1.0
+        },
+        "X": {
+          "clips": 4,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 4,
+          "accepted_accuracy": 1.0
+        },
+        "Y": {
+          "clips": 9,
+          "accuracy": 0.7777777777777778,
+          "accepted_at_85_percent": 9,
+          "accepted_accuracy": 0.7777777777777778
+        },
+        "Z": {
+          "clips": 5,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 5,
+          "accepted_accuracy": 1.0
+        }
+      },
+      "original_three_signers": {
+        "clips": 206,
+        "accuracy": 0.7912621359223301,
+        "accepted_at_85_percent": 138,
+        "accepted_accuracy": 0.927536231884058
+      }
+    }
+  },
+  "airv_model": {
+    "validation_original": {
+      "all": {
+        "clips": 244,
+        "accuracy": 0.8278688524590164,
+        "accepted_at_85_percent": 142,
+        "accepted_accuracy": 0.9647887323943662
+      },
+      "by_participant": {
+        "angel": {
+          "clips": 84,
+          "accuracy": 0.8809523809523809,
+          "accepted_at_85_percent": 50,
+          "accepted_accuracy": 1.0
+        },
+        "isaac": {
+          "clips": 38,
+          "accuracy": 0.8947368421052632,
+          "accepted_at_85_percent": 26,
+          "accepted_accuracy": 0.9615384615384616
+        },
+        "mathur": {
+          "clips": 49,
+          "accuracy": 0.8163265306122449,
+          "accepted_at_85_percent": 32,
+          "accepted_accuracy": 0.96875
+        },
+        "rithika": {
+          "clips": 73,
+          "accuracy": 0.7397260273972602,
+          "accepted_at_85_percent": 34,
+          "accepted_accuracy": 0.9117647058823529
+        }
+      },
+      "by_letter": {
+        "A": {
+          "clips": 18,
+          "accuracy": 0.9444444444444444,
+          "accepted_at_85_percent": 16,
+          "accepted_accuracy": 0.9375
+        },
+        "B": {
+          "clips": 13,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 13,
+          "accepted_accuracy": 1.0
+        },
+        "C": {
+          "clips": 5,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 4,
+          "accepted_accuracy": 1.0
+        },
+        "D": {
+          "clips": 12,
+          "accuracy": 0.9166666666666666,
+          "accepted_at_85_percent": 10,
+          "accepted_accuracy": 0.9
+        },
+        "E": {
+          "clips": 13,
+          "accuracy": 0.9230769230769231,
+          "accepted_at_85_percent": 11,
+          "accepted_accuracy": 0.9090909090909091
+        },
+        "F": {
+          "clips": 12,
+          "accuracy": 0.9166666666666666,
+          "accepted_at_85_percent": 11,
+          "accepted_accuracy": 0.9090909090909091
+        },
+        "G": {
+          "clips": 5,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 5,
+          "accepted_accuracy": 1.0
+        },
+        "I": {
+          "clips": 9,
+          "accuracy": 0.5555555555555556,
+          "accepted_at_85_percent": 2,
+          "accepted_accuracy": 1.0
+        },
+        "K": {
+          "clips": 13,
+          "accuracy": 0.7692307692307693,
+          "accepted_at_85_percent": 10,
+          "accepted_accuracy": 1.0
+        },
+        "L": {
+          "clips": 13,
+          "accuracy": 0.5384615384615384,
+          "accepted_at_85_percent": 0,
+          "accepted_accuracy": null
+        },
+        "M": {
+          "clips": 13,
+          "accuracy": 0.8461538461538461,
+          "accepted_at_85_percent": 0,
+          "accepted_accuracy": null
+        },
+        "N": {
+          "clips": 16,
+          "accuracy": 0.3125,
+          "accepted_at_85_percent": 0,
+          "accepted_accuracy": null
+        },
+        "O": {
+          "clips": 19,
+          "accuracy": 0.631578947368421,
+          "accepted_at_85_percent": 2,
+          "accepted_accuracy": 1.0
+        },
+        "P": {
+          "clips": 10,
+          "accuracy": 0.9,
+          "accepted_at_85_percent": 10,
+          "accepted_accuracy": 0.9
+        },
+        "Q": {
+          "clips": 7,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 7,
+          "accepted_accuracy": 1.0
+        },
+        "S": {
+          "clips": 8,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 8,
+          "accepted_accuracy": 1.0
+        },
+        "T": {
+          "clips": 5,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 5,
+          "accepted_accuracy": 1.0
+        },
+        "U": {
+          "clips": 18,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 8,
+          "accepted_accuracy": 1.0
+        },
+        "V": {
+          "clips": 12,
+          "accuracy": 0.6666666666666666,
+          "accepted_at_85_percent": 0,
+          "accepted_accuracy": null
+        },
+        "W": {
+          "clips": 5,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 4,
+          "accepted_accuracy": 1.0
+        },
+        "X": {
+          "clips": 4,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 3,
+          "accepted_accuracy": 1.0
+        },
+        "Y": {
+          "clips": 9,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 8,
+          "accepted_accuracy": 1.0
+        },
+        "Z": {
+          "clips": 5,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 5,
+          "accepted_accuracy": 1.0
+        }
+      },
+      "original_three_signers": {
+        "clips": 206,
+        "accuracy": 0.8155339805825242,
+        "accepted_at_85_percent": 116,
+        "accepted_accuracy": 0.9655172413793104
+      }
+    },
+    "validation_mirrored": {
+      "all": {
+        "clips": 244,
+        "accuracy": 0.8032786885245902,
+        "accepted_at_85_percent": 145,
+        "accepted_accuracy": 0.9517241379310345
+      },
+      "by_participant": {
+        "angel": {
+          "clips": 84,
+          "accuracy": 0.8452380952380952,
+          "accepted_at_85_percent": 52,
+          "accepted_accuracy": 1.0
+        },
+        "isaac": {
+          "clips": 38,
+          "accuracy": 0.9473684210526315,
+          "accepted_at_85_percent": 26,
+          "accepted_accuracy": 0.9615384615384616
+        },
+        "mathur": {
+          "clips": 49,
+          "accuracy": 0.7755102040816326,
+          "accepted_at_85_percent": 30,
+          "accepted_accuracy": 0.9666666666666667
+        },
+        "rithika": {
+          "clips": 73,
+          "accuracy": 0.6986301369863014,
+          "accepted_at_85_percent": 37,
+          "accepted_accuracy": 0.8648648648648649
+        }
+      },
+      "by_letter": {
+        "A": {
+          "clips": 18,
+          "accuracy": 0.8333333333333334,
+          "accepted_at_85_percent": 17,
+          "accepted_accuracy": 0.8823529411764706
+        },
+        "B": {
+          "clips": 13,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 13,
+          "accepted_accuracy": 1.0
+        },
+        "C": {
+          "clips": 5,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 5,
+          "accepted_accuracy": 1.0
+        },
+        "D": {
+          "clips": 12,
+          "accuracy": 0.75,
+          "accepted_at_85_percent": 10,
+          "accepted_accuracy": 0.9
+        },
+        "E": {
+          "clips": 13,
+          "accuracy": 0.9230769230769231,
+          "accepted_at_85_percent": 12,
+          "accepted_accuracy": 0.9166666666666666
+        },
+        "F": {
+          "clips": 12,
+          "accuracy": 0.8333333333333334,
+          "accepted_at_85_percent": 11,
+          "accepted_accuracy": 0.9090909090909091
+        },
+        "G": {
+          "clips": 5,
+          "accuracy": 0.8,
+          "accepted_at_85_percent": 4,
+          "accepted_accuracy": 1.0
+        },
+        "I": {
+          "clips": 9,
+          "accuracy": 0.6666666666666666,
+          "accepted_at_85_percent": 2,
+          "accepted_accuracy": 1.0
+        },
+        "K": {
+          "clips": 13,
+          "accuracy": 0.9230769230769231,
+          "accepted_at_85_percent": 11,
+          "accepted_accuracy": 1.0
+        },
+        "L": {
+          "clips": 13,
+          "accuracy": 0.5384615384615384,
+          "accepted_at_85_percent": 1,
+          "accepted_accuracy": 0.0
+        },
+        "M": {
+          "clips": 13,
+          "accuracy": 0.6153846153846154,
+          "accepted_at_85_percent": 0,
+          "accepted_accuracy": null
+        },
+        "N": {
+          "clips": 16,
+          "accuracy": 0.375,
+          "accepted_at_85_percent": 0,
+          "accepted_accuracy": null
+        },
+        "O": {
+          "clips": 19,
+          "accuracy": 0.6842105263157895,
+          "accepted_at_85_percent": 1,
+          "accepted_accuracy": 1.0
+        },
+        "P": {
+          "clips": 10,
+          "accuracy": 0.8,
+          "accepted_at_85_percent": 9,
+          "accepted_accuracy": 0.8888888888888888
+        },
+        "Q": {
+          "clips": 7,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 7,
+          "accepted_accuracy": 1.0
+        },
+        "S": {
+          "clips": 8,
+          "accuracy": 0.875,
+          "accepted_at_85_percent": 7,
+          "accepted_accuracy": 1.0
+        },
+        "T": {
+          "clips": 5,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 5,
+          "accepted_accuracy": 1.0
+        },
+        "U": {
+          "clips": 18,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 10,
+          "accepted_accuracy": 1.0
+        },
+        "V": {
+          "clips": 12,
+          "accuracy": 0.8333333333333334,
+          "accepted_at_85_percent": 0,
+          "accepted_accuracy": null
+        },
+        "W": {
+          "clips": 5,
+          "accuracy": 0.8,
+          "accepted_at_85_percent": 4,
+          "accepted_accuracy": 1.0
+        },
+        "X": {
+          "clips": 4,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 4,
+          "accepted_accuracy": 1.0
+        },
+        "Y": {
+          "clips": 9,
+          "accuracy": 0.8888888888888888,
+          "accepted_at_85_percent": 7,
+          "accepted_accuracy": 1.0
+        },
+        "Z": {
+          "clips": 5,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 5,
+          "accepted_accuracy": 1.0
+        }
+      },
+      "original_three_signers": {
+        "clips": 206,
+        "accuracy": 0.7766990291262136,
+        "accepted_at_85_percent": 119,
+        "accepted_accuracy": 0.9495798319327731
+      }
+    },
+    "test_original": {
+      "all": {
+        "clips": 206,
+        "accuracy": 0.7572815533980582,
+        "accepted_at_85_percent": 109,
+        "accepted_accuracy": 0.9357798165137615
+      },
+      "by_participant": {
+        "angel": {
+          "clips": 73,
+          "accuracy": 0.7123287671232876,
+          "accepted_at_85_percent": 36,
+          "accepted_accuracy": 0.9166666666666666
+        },
+        "isaac": {
+          "clips": 32,
+          "accuracy": 0.96875,
+          "accepted_at_85_percent": 21,
+          "accepted_accuracy": 1.0
+        },
+        "mathur": {
+          "clips": 39,
+          "accuracy": 0.7692307692307693,
+          "accepted_at_85_percent": 22,
+          "accepted_accuracy": 1.0
+        },
+        "rithika": {
+          "clips": 62,
+          "accuracy": 0.6935483870967742,
+          "accepted_at_85_percent": 30,
+          "accepted_accuracy": 0.8666666666666667
+        }
+      },
+      "by_letter": {
+        "A": {
+          "clips": 17,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 17,
+          "accepted_accuracy": 1.0
+        },
+        "B": {
+          "clips": 12,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 12,
+          "accepted_accuracy": 1.0
+        },
+        "C": {
+          "clips": 4,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 4,
+          "accepted_accuracy": 1.0
+        },
+        "D": {
+          "clips": 10,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 8,
+          "accepted_accuracy": 1.0
+        },
+        "E": {
+          "clips": 12,
+          "accuracy": 0.5833333333333334,
+          "accepted_at_85_percent": 3,
+          "accepted_accuracy": 1.0
+        },
+        "F": {
+          "clips": 10,
+          "accuracy": 0.8,
+          "accepted_at_85_percent": 8,
+          "accepted_accuracy": 1.0
+        },
+        "G": {
+          "clips": 3,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 3,
+          "accepted_accuracy": 1.0
+        },
+        "I": {
+          "clips": 8,
+          "accuracy": 0.375,
+          "accepted_at_85_percent": 1,
+          "accepted_accuracy": 1.0
+        },
+        "K": {
+          "clips": 10,
+          "accuracy": 0.8,
+          "accepted_at_85_percent": 8,
+          "accepted_accuracy": 0.875
+        },
+        "L": {
+          "clips": 12,
+          "accuracy": 0.5833333333333334,
+          "accepted_at_85_percent": 0,
+          "accepted_accuracy": null
+        },
+        "M": {
+          "clips": 12,
+          "accuracy": 0.75,
+          "accepted_at_85_percent": 0,
+          "accepted_accuracy": null
+        },
+        "N": {
+          "clips": 14,
+          "accuracy": 0.2857142857142857,
+          "accepted_at_85_percent": 0,
+          "accepted_accuracy": null
+        },
+        "O": {
+          "clips": 17,
+          "accuracy": 0.7058823529411765,
+          "accepted_at_85_percent": 3,
+          "accepted_accuracy": 1.0
+        },
+        "P": {
+          "clips": 8,
+          "accuracy": 0.5,
+          "accepted_at_85_percent": 8,
+          "accepted_accuracy": 0.5
+        },
+        "Q": {
+          "clips": 5,
+          "accuracy": 0.8,
+          "accepted_at_85_percent": 5,
+          "accepted_accuracy": 0.8
+        },
+        "S": {
+          "clips": 5,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 5,
+          "accepted_accuracy": 1.0
+        },
+        "T": {
+          "clips": 4,
+          "accuracy": 0.75,
+          "accepted_at_85_percent": 2,
+          "accepted_accuracy": 1.0
+        },
+        "U": {
+          "clips": 16,
+          "accuracy": 0.875,
+          "accepted_at_85_percent": 7,
+          "accepted_accuracy": 1.0
+        },
+        "V": {
+          "clips": 11,
+          "accuracy": 0.7272727272727273,
+          "accepted_at_85_percent": 0,
+          "accepted_accuracy": null
+        },
+        "W": {
+          "clips": 4,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 4,
+          "accepted_accuracy": 1.0
+        },
+        "X": {
+          "clips": 2,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 2,
+          "accepted_accuracy": 1.0
+        },
+        "Y": {
+          "clips": 7,
+          "accuracy": 0.7142857142857143,
+          "accepted_at_85_percent": 6,
+          "accepted_accuracy": 0.8333333333333334
+        },
+        "Z": {
+          "clips": 3,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 3,
+          "accepted_accuracy": 1.0
+        }
+      },
+      "original_three_signers": {
+        "clips": 174,
+        "accuracy": 0.7183908045977011,
+        "accepted_at_85_percent": 88,
+        "accepted_accuracy": 0.9204545454545454
+      }
+    },
+    "test_mirrored": {
+      "all": {
+        "clips": 206,
+        "accuracy": 0.7669902912621359,
+        "accepted_at_85_percent": 118,
+        "accepted_accuracy": 0.9067796610169492
+      },
+      "by_participant": {
+        "angel": {
+          "clips": 73,
+          "accuracy": 0.7534246575342466,
+          "accepted_at_85_percent": 40,
+          "accepted_accuracy": 0.875
+        },
+        "isaac": {
+          "clips": 32,
+          "accuracy": 0.96875,
+          "accepted_at_85_percent": 20,
+          "accepted_accuracy": 1.0
+        },
+        "mathur": {
+          "clips": 39,
+          "accuracy": 0.7692307692307693,
+          "accepted_at_85_percent": 23,
+          "accepted_accuracy": 0.9565217391304348
+        },
+        "rithika": {
+          "clips": 62,
+          "accuracy": 0.6774193548387096,
+          "accepted_at_85_percent": 35,
+          "accepted_accuracy": 0.8571428571428571
+        }
+      },
+      "by_letter": {
+        "A": {
+          "clips": 17,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 16,
+          "accepted_accuracy": 1.0
+        },
+        "B": {
+          "clips": 12,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 12,
+          "accepted_accuracy": 1.0
+        },
+        "C": {
+          "clips": 4,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 3,
+          "accepted_accuracy": 1.0
+        },
+        "D": {
+          "clips": 10,
+          "accuracy": 0.8,
+          "accepted_at_85_percent": 8,
+          "accepted_accuracy": 1.0
+        },
+        "E": {
+          "clips": 12,
+          "accuracy": 0.6666666666666666,
+          "accepted_at_85_percent": 8,
+          "accepted_accuracy": 0.875
+        },
+        "F": {
+          "clips": 10,
+          "accuracy": 0.8,
+          "accepted_at_85_percent": 9,
+          "accepted_accuracy": 0.8888888888888888
+        },
+        "G": {
+          "clips": 3,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 3,
+          "accepted_accuracy": 1.0
+        },
+        "I": {
+          "clips": 8,
+          "accuracy": 0.5,
+          "accepted_at_85_percent": 2,
+          "accepted_accuracy": 0.5
+        },
+        "K": {
+          "clips": 10,
+          "accuracy": 0.9,
+          "accepted_at_85_percent": 8,
+          "accepted_accuracy": 1.0
+        },
+        "L": {
+          "clips": 12,
+          "accuracy": 0.5,
+          "accepted_at_85_percent": 1,
+          "accepted_accuracy": 0.0
+        },
+        "M": {
+          "clips": 12,
+          "accuracy": 0.5833333333333334,
+          "accepted_at_85_percent": 0,
+          "accepted_accuracy": null
+        },
+        "N": {
+          "clips": 14,
+          "accuracy": 0.35714285714285715,
+          "accepted_at_85_percent": 0,
+          "accepted_accuracy": null
+        },
+        "O": {
+          "clips": 17,
+          "accuracy": 0.8235294117647058,
+          "accepted_at_85_percent": 5,
+          "accepted_accuracy": 1.0
+        },
+        "P": {
+          "clips": 8,
+          "accuracy": 0.5,
+          "accepted_at_85_percent": 7,
+          "accepted_accuracy": 0.5714285714285714
+        },
+        "Q": {
+          "clips": 5,
+          "accuracy": 0.8,
+          "accepted_at_85_percent": 5,
+          "accepted_accuracy": 0.8
+        },
+        "S": {
+          "clips": 5,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 5,
+          "accepted_accuracy": 1.0
+        },
+        "T": {
+          "clips": 4,
+          "accuracy": 0.5,
+          "accepted_at_85_percent": 3,
+          "accepted_accuracy": 0.6666666666666666
+        },
+        "U": {
+          "clips": 16,
+          "accuracy": 0.875,
+          "accepted_at_85_percent": 7,
+          "accepted_accuracy": 0.8571428571428571
+        },
+        "V": {
+          "clips": 11,
+          "accuracy": 0.7272727272727273,
+          "accepted_at_85_percent": 1,
+          "accepted_accuracy": 0.0
+        },
+        "W": {
+          "clips": 4,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 4,
+          "accepted_accuracy": 1.0
+        },
+        "X": {
+          "clips": 2,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 2,
+          "accepted_accuracy": 1.0
+        },
+        "Y": {
+          "clips": 7,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 6,
+          "accepted_accuracy": 1.0
+        },
+        "Z": {
+          "clips": 3,
+          "accuracy": 1.0,
+          "accepted_at_85_percent": 3,
+          "accepted_accuracy": 1.0
+        }
+      },
+      "original_three_signers": {
+        "clips": 174,
+        "accuracy": 0.7298850574712644,
+        "accepted_at_85_percent": 98,
+        "accepted_accuracy": 0.8877551020408163
+      }
+    }
+  },
+  "limitations": [
+    "Mirrored evaluation is synthetic and does not establish real left-handed camera performance.",
+    "Test recordings were held out from this run, but some were training data for the current model; current-model test comparisons are omitted.",
+    "All test signers also occur in training; this does not measure unseen-signer accuracy.",
+    "Isaac has no C recordings. Added Isaac data cannot directly teach his C sign."
+  ]
+}

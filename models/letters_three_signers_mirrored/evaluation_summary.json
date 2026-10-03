@@ -1,0 +1,63 @@
+{
+  "input_shape": [
+    1598,
+    18,
+    227
+  ],
+  "num_classes": 24,
+  "training_sequences": 2490,
+  "validation_sequences": 220,
+  "original_training_sequences": 1245,
+  "mirrored_training_sequences": 1245,
+  "validation_participant": null,
+  "split_strategy": "within_participant_recordings",
+  "validation_participants": [
+    "angel",
+    "mathur",
+    "rithika"
+  ],
+  "excluded_sequences": 133,
+  "best_epoch": 87,
+  "best_epoch_val_loss": 0.6502571105957031,
+  "best_epoch_val_accuracy": 0.7818182110786438,
+  "restored_model_validation_loss": 0.6502571105957031,
+  "restored_model_validation_accuracy": 0.7818182110786438,
+  "epochs_completed": 100,
+  "hyperparameters": {
+    "data_dir": "C:\\Users\\mathu\\Modeltraining\\data\\letter_dataset",
+    "output_dir": "C:\\Users\\mathu\\Modeltraining\\models\\letters_three_signers_mirrored",
+    "input_file": "sequences_body_hands.npy",
+    "mirror_augmentation": true,
+    "feature_set": "baseline",
+    "val_participant": null,
+    "test_participant": null,
+    "participants": [
+      "angel",
+      "rithika",
+      "mathur"
+    ],
+    "previous_split_manifest": "C:\\Users\\mathu\\Modeltraining\\models\\letters_three_signers\\split_manifest.csv",
+    "validation_fraction": 0.15,
+    "epochs": 100,
+    "batch_size": 32,
+    "learning_rate": 0.0005,
+    "patience": 15,
+    "lr_patience": 6,
+    "lr_factor": 0.5,
+    "min_lr": 1e-06,
+    "seed": 42,
+    "weighting": "class",
+    "frame_dense_units": 128,
+    "lstm_units": 64,
+    "dense_units": 64,
+    "dropout": 0.4,
+    "recurrent_dropout": 0.0,
+    "bidirectional": false,
+    "l2": 0.0,
+    "input_shape": [
+      1598,
+      18,
+      227
+    ]
+  }
+}

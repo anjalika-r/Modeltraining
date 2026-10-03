@@ -1,0 +1,12 @@
+{
+  "participant": null,
+  "sequences": 206,
+  "participants": [
+    "angel",
+    "isaac",
+    "mathur",
+    "rithika"
+  ],
+  "loss": 0.5353419780731201,
+  "accuracy": 0.8495145440101624
+}

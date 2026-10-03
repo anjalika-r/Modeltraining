@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.utils.class_weight import compute_class_weight
 from sign_features import FEATURE_DIM, SCHEMA, MODEL_SCHEMAS, model_features, load_class_names, mirror_body_hands
-from dataset_split import split_selected_participants
+from dataset_split import split_selected_participants, split_from_manifest
 from training_weights import signer_letter_weights
 
 
@@ -25,6 +25,7 @@ def parse_args():
     p.add_argument('--test-participant', help='Optional untouched participant for final evaluation')
     p.add_argument('--participants', nargs='+', help='Use only these participants, splitting their recordings into train/validation')
     p.add_argument('--previous-split-manifest', type=Path, help='Preserve previous train/validation recordings; split only added recordings')
+    p.add_argument('--split-manifest', type=Path, help='Explicit train/validation/test recording assignments')
     p.add_argument('--validation-fraction', type=float, default=0.15)
     p.add_argument('--epochs', type=int, default=100)
     p.add_argument('--batch-size', type=int, default=32)
@@ -44,6 +45,8 @@ def parse_args():
     p.add_argument('--bidirectional', action='store_true')
     p.add_argument('--l2', type=float, default=0.0)
     args = p.parse_args()
+    if args.split_manifest and (args.participants or args.test_participant or args.previous_split_manifest):
+        p.error('--split-manifest cannot be combined with other split options')
     if args.participants and args.test_participant:
         p.error('--participants excludes everyone else; do not combine with --test-participant')
     if args.previous_split_manifest and not args.participants:
@@ -119,7 +122,10 @@ def main():
         raise SystemExit('Input does not match shoulder-normalized feature contract')
     schema = MODEL_SCHEMAS[args.feature_set]
     part = meta['participant'].astype(str)
-    if args.participants:
+    if args.split_manifest:
+        train_mask, val_mask, test_mask = split_from_manifest(meta, pd.read_csv(args.split_manifest))
+        args.val_participant = None
+    elif args.participants:
         previous = pd.read_csv(args.previous_split_manifest) if args.previous_split_manifest else None
         train_mask, val_mask = split_selected_participants(meta, args.participants, args.validation_fraction, args.seed, previous)
         test_mask = pd.Series(False, index=meta.index)
@@ -162,6 +168,7 @@ def main():
 
     config = vars(args).copy(); config['data_dir'] = str(data_dir); config['output_dir'] = str(out); config['input_shape'] = list(X.shape)
     config['previous_split_manifest'] = str(args.previous_split_manifest.resolve()) if args.previous_split_manifest else None
+    config['split_manifest'] = str(args.split_manifest.resolve()) if args.split_manifest else None
     with (out/'run_config.json').open('w') as f: json.dump(config, f, indent=2)
     durations = []
     for value in meta.loc[train_mask, 'selected_timestamps']:
@@ -247,7 +254,7 @@ def main():
         'original_training_sequences': original_training_sequences,
         'mirrored_training_sequences': original_training_sequences if args.mirror_augmentation else 0,
         'validation_participant': args.val_participant,
-        'split_strategy': 'within_participant_recordings' if args.participants else 'held_out_participants',
+        'split_strategy': 'explicit_recording_split' if args.split_manifest else ('within_participant_recordings' if args.participants else 'held_out_participants'),
         'validation_participants': sorted(meta.loc[val_mask, 'participant'].unique().tolist()),
         'excluded_sequences': int((~(train_mask | val_mask | test_mask)).sum()),
         'best_epoch': best_epoch,
@@ -267,6 +274,7 @@ def main():
             y_test, test_pred, labels=np.arange(n_classes), target_names=class_names, zero_division=0, digits=4))
         (out/'test_summary.json').write_text(json.dumps({
             'participant': args.test_participant, 'sequences': len(y_test),
+            'participants': sorted(meta.loc[test_mask, 'participant'].unique().tolist()),
             'loss': float(test_loss), 'accuracy': float(test_accuracy),
         }, indent=2))
 
