@@ -317,14 +317,72 @@ letter does not establish that the sign was performed correctly.
 `SignSenseGDG` website. Its Letter island uses the existing reference JPGs,
 shuffles supported letters and sends timed, unmirrored JPEG camera frames to
 the website's local `serve.py`. It reuses the same normalization, frame sampling
-and `letters_three_signers` checkpoint as the webcam demo. Lost tracking produces
+and `letters_three_signers_mirrored` checkpoint as the webcam demo. Lost tracking produces
 an uncertain result; only accepted matching predictions update local progress.
+Recorded attempts require a model score of at least 0.85 by default. Uncertain
+results return no detected letter, so the website does not display a best guess.
+The website server also defaults to 0.85; `SIGNSENSE_LETTER_THRESHOLD` can
+override it. This score is uncalibrated and does not guarantee correctness.
+After changing the website server or predictor, stop older server instances
+and restart it: editing files does not reload an already loaded model.
+`GET /api/letters` reports the configured model version. An actual
+`POST /api/letter-attempt` response also includes `model_info`, containing
+the loaded checkpoint path, SHA-256 fingerprint, threshold and input mirroring.
+For a comparison at the website's stricter threshold, run:
+
+```powershell
+python scripts/predict_webcam.py --model-dir models/letters_three_signers_mirrored --threshold 0.85
+```
+
+The webcam uses continuous tracking and repeated rolling-window predictions;
+the website evaluates one JPEG recording with a fresh tracker. Matching the
+checkpoint and threshold does not make the camera capture paths identical.
 
 Run `python serve.py` from `C:\Users\mathu\SignSenseGDG` using the Python
 environment with this repository's requirements installed. See that repository's
 README for configuration and the localhost exercise URL. No model files need
 to be copied to the frontend. This remains practice feedback with the existing
 model limitations, not a validated technique assessment.
+
+## AIRV experiment without R (2026-10-02)
+
+`scripts/prepare_airv_experiment.py` prepares `data/AIRV_no_r` from the preserved
+`data/AIRV_dataset`, removes all R recordings and normalizes Isaac's participant
+ID. It retains earlier validation assignments for the other three signers and
+reserves a final recording-level test set before training. Exact duplicate
+tensors stay together. The trainer's `--split-manifest` option loads these frozen
+train/validation/test assignments; mirror augmentation applies to training only.
+
+The separate `models/letters_airv_no_r_mirrored` checkpoint uses baseline features
+and 23 letters. It trains on 1,168 originals plus 1,168 mirrors, validates on 244
+recordings and tests on 206. Selected epoch 53 of 68 scores 82.79% validation and
+75.73% test accuracy. The current mirrored model scores 75.41% on the same
+validation clips. Isaac improves from 55.26% to 89.47% validation accuracy, while
+Rithika declines from 78.08% to 73.97%. At score 0.85, the candidate accepts 109
+of 206 original test clips; 93.58% of accepted predictions are correct.
+
+These are familiar-signer recording results. Synthetic mirror tests do not
+establish real left-handed camera performance, and the experiment changes more
+than Isaac's data alone. The website checkpoint has not been replaced. Detailed
+results and reproduction commands are in the model directory's `report.md`.
+
+```powershell
+python scripts/predict_webcam.py --model-dir models/letters_airv_no_r_mirrored --threshold 0.85
+```
+
+The follow-up `models/letters_airv_no_r_shape_contact` changes only the feature
+representation to 497 inputs, preserving the AIRV split, seed and mirroring.
+Selected epoch 53 of 68 scores 86.48% original validation accuracy versus 82.79%
+for baseline. At threshold 0.85, it accepts 182/244 validation clips at 97.25%
+accepted accuracy, versus 142/244 at 96.48%. Original test accuracy rises from
+75.73% to 84.95%, but this follow-up is exploratory because those test errors
+were inspected when choosing the feature experiment. I remains a weakness;
+Angel validation accuracy decreases while the other three signers improve.
+See its `report.md` and `feature_comparison.json` for per-letter results.
+
+```powershell
+python scripts/predict_webcam.py --model-dir models/letters_airv_no_r_shape_contact --threshold 0.85
+```
 
 ## Verification commands
 

@@ -1,0 +1,80 @@
+[
+  {
+    "letter": "E",
+    "validation_correct": 12,
+    "validation_clips": 13,
+    "test_correct": 7,
+    "test_clips": 12,
+    "test_accepted": 3,
+    "test_accepted_wrong": 0,
+    "test_wrong_predictions": {
+      "I": 3,
+      "O": 1,
+      "C": 1
+    }
+  },
+  {
+    "letter": "I",
+    "validation_correct": 5,
+    "validation_clips": 9,
+    "test_correct": 3,
+    "test_clips": 8,
+    "test_accepted": 1,
+    "test_accepted_wrong": 0,
+    "test_wrong_predictions": {
+      "U": 2,
+      "E": 2,
+      "M": 1
+    }
+  },
+  {
+    "letter": "K",
+    "validation_correct": 10,
+    "validation_clips": 13,
+    "test_correct": 8,
+    "test_clips": 10,
+    "test_accepted": 8,
+    "test_accepted_wrong": 1,
+    "test_wrong_predictions": {
+      "S": 1,
+      "D": 1
+    }
+  },
+  {
+    "letter": "Q",
+    "validation_correct": 7,
+    "validation_clips": 7,
+    "test_correct": 4,
+    "test_clips": 5,
+    "test_accepted": 5,
+    "test_accepted_wrong": 1,
+    "test_wrong_predictions": {
+      "P": 1
+    }
+  },
+  {
+    "letter": "Y",
+    "validation_correct": 9,
+    "validation_clips": 9,
+    "test_correct": 5,
+    "test_clips": 7,
+    "test_accepted": 6,
+    "test_accepted_wrong": 1,
+    "test_wrong_predictions": {
+      "A": 2
+    }
+  },
+  {
+    "letter": "U",
+    "validation_correct": 18,
+    "validation_clips": 18,
+    "test_correct": 14,
+    "test_clips": 16,
+    "test_accepted": 7,
+    "test_accepted_wrong": 0,
+    "test_wrong_predictions": {
+      "K": 1,
+      "N": 1
+    }
+  }
+]

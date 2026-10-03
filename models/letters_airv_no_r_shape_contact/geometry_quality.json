@@ -1,0 +1,32 @@
+{
+  "E": {
+    "recordings": 89,
+    "left_geometry_valid_fraction": 0.9687890410423279,
+    "right_geometry_valid_fraction": 0.8614231944084167
+  },
+  "I": {
+    "recordings": 64,
+    "left_geometry_valid_fraction": 0.9852430820465088,
+    "right_geometry_valid_fraction": 0.8854166865348816
+  },
+  "K": {
+    "recordings": 82,
+    "left_geometry_valid_fraction": 1.0,
+    "right_geometry_valid_fraction": 0.9728997349739075
+  },
+  "Q": {
+    "recordings": 44,
+    "left_geometry_valid_fraction": 1.0,
+    "right_geometry_valid_fraction": 0.9305555820465088
+  },
+  "Y": {
+    "recordings": 56,
+    "left_geometry_valid_fraction": 0.971230149269104,
+    "right_geometry_valid_fraction": 1.0
+  },
+  "U": {
+    "recordings": 125,
+    "left_geometry_valid_fraction": 0.9644444584846497,
+    "right_geometry_valid_fraction": 0.9404444694519043
+  }
+}

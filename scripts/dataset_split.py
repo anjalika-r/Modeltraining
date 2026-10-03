@@ -3,6 +3,27 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 
+def split_from_manifest(metadata, manifest):
+    """Load a complete recording split, requiring matching keys and labels."""
+    keys = ['participant', 'source_file']
+    if manifest.duplicated(keys).any() or metadata.duplicated(keys).any():
+        raise ValueError('Explicit split requires unique recording keys')
+    if len(manifest) != len(metadata):
+        raise ValueError('Split manifest does not cover the dataset')
+    ordered = metadata[keys + ['class_label']].merge(
+        manifest[keys + ['class_label', 'split']], on=keys, how='left',
+        suffixes=('', '_manifest'), validate='one_to_one')
+    if not ordered.class_label.eq(ordered.class_label_manifest).all():
+        raise ValueError('Split manifest recording labels disagree')
+    if not ordered.split.isin(['train', 'validation', 'test']).all():
+        raise ValueError('Invalid or missing split assignments')
+    masks = tuple(pd.Series(ordered.split.eq(s).to_numpy(), index=metadata.index)
+                  for s in ['train', 'validation', 'test'])
+    if not all(mask.any() for mask in masks):
+        raise ValueError('Explicit split requires train, validation and test recordings')
+    return masks
+
+
 def split_selected_participants(metadata, participants, validation_fraction, seed, previous_manifest=None):
     if not 0 < validation_fraction < 1:
         raise ValueError('Validation fraction must be between zero and one')
